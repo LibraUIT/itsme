@@ -1,0 +1,36 @@
+<div class="page-header" style="width:780px">
+  <h1 class="title">Top Idols</h1>
+</div>
+<div class="container" style="width: 1040px">
+    <div class="row">
+        <div class="col-sm-9">
+            <% 18.times.each do |time| %>
+                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#">
+                        <%= image_tag "idol", class: "img-responsive" %>
+                    </a>
+                </div>
+            <% end %>
+        </div>
+        <div class="col-s-3">
+            <div class="aside-nolog">
+                <h3>DOWNLOAD FOR MOBILE</h3>
+                <div class="mobile-download">
+                    <%= image_tag "ios-qrcode.png", class: 'qr-code' %>
+                    <div class="icon">
+                        <%= image_tag "Icon_Appstore.png" %>
+                        <a href="https://itunes.apple.com/us/app/talktv-cctalk/id982100612?ls=1&amp;mt=8" target="_blank" class="btn05">Tải về</a>
+                    </div>
+                </div>
+                <div class="mobile-download">
+                    <%= image_tag "ios-qrcode.png", class: 'qr-code' %>
+                    <div class="icon">
+                        <%= image_tag "Icon_Appstore.png" %>
+                        <a href="https://play.google.com/store/apps/details?id=vn.com.vng.talktv&amp;hl=en" target="_blank" class="btn05">Tải về</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
