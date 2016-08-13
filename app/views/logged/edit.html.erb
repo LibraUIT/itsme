@@ -1,0 +1,69 @@
+<%= form_for @idol, url: logged_path, method: :put, :remote => true, html: {class: 'formtastic form-edit'} do |f| %>
+  <fieldset class="inputs">
+    <legend><span>Idol Information</span></legend>
+    <table class="table">
+      <tr>
+        <td><%= f.label :idol_name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :nickname %></td>
+        <td><%= f.text_field :nickname %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :birthday %></td>
+        <td><%= f.text_field :birthday %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :phone %></td>
+        <td><%= f.text_field :phone %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :phone %></td>
+        <td><%= f.text_field :phone %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :facebook %></td>
+        <td><%= f.text_field :facebook %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :instagram %></td>
+        <td><%= f.text_field :instagram %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :app_id %></td>
+        <td><%= f.text_field :itsme_id %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :bio %></td>
+        <td><%= f.text_field :bio %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :avatar %></td>
+        <td>
+          <%= f.file_field :avatar %>
+          <%= image_tag @idol.avatar.url, width: '150' %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action " id="idol_submit_action">
+        <input type="submit" name="commit" value="Update Idol">
+      </li>
+      <li class="cancel" id="idol_cancel_action">
+        <input onclick="$('.form-edit').remove();" type="button" name="commit" value="Cancel">
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+<script type="text/javascript">
+  $('form.form-edit').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
+</script>

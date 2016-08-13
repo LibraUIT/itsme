@@ -1,0 +1,34 @@
+<a href="javascript:void(0);" onclick="$('.create-idol-form').toggleClass('hide');$('.edit').html('');"><h3>New Idol</h3></a><br />
+<div class="messages"></div>
+<%= render "form" %>
+<div class="edit"></div>
+<div class="list-idols">
+  <h2>All Idols</h2>
+  <table class="index_table index">
+    <thead>
+      <tr>
+        <th width="180">Idol</th>
+        <th>Name</th>
+        <th width="180">Created At</th>
+        <th width="180">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Idol.all.each do |idol| %>
+        <tr>
+          <td><%= image_tag idol.avatar.url, class: 'thumb-img' %></td>
+          <td><%= idol.name %></td>
+          <td><%= idol.created_at.strftime('%d/%m/%Y') %></td>
+          <td>
+            <%= link_to edit_logged_path(idol), remote: true, class: 'edit-idol' do %>
+              <button type="button" class="btn"> Edit</button>
+            <% end %>
+            <%= link_to logged_path(idol), method: :delete, remote: true, data: {confirm: 'Are you sure?'} do %>
+              <button type="button" class="btn"> Delete</button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

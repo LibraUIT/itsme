@@ -1,0 +1,55 @@
+<div class="create-idol-form hide">
+  <%= form_for Idol.new, url: logged_index_path, method: 'post', :remote => true, html: {class: 'formtastic'} do |f| %>
+    <fieldset class="inputs">
+      <legend><span>Idol Information</span></legend>
+      <ol>
+        <li>
+          <%= f.label :idol_name %>
+          <%= f.text_field :name %>
+        </li>
+        <li>
+          <%= f.label :nickname %>
+          <%= f.text_field :nickname %>
+        </li>
+        <li>
+          <%= f.label :birthday %>
+          <%= f.text_field :birthday %>
+        </li>
+        <li>
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </li>
+        <li>
+          <%= f.label :facebook %>
+          <%= f.text_field :facebook %>
+        </li>
+        <li>
+          <%= f.label :instagram %>
+          <%= f.text_field :instagram %>
+        </li>
+        <li>
+          <%= f.label :app_id %>
+          <%= f.text_field :itsme_id %>
+        </li>
+        <li>
+          <%= f.label :bio %>
+          <%= f.text_field :bio %>
+        </li>
+        <li>
+          <%= f.label :avatar %>
+          <%= f.file_field :avatar %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset class="actions">
+      <ol>
+        <li class="action input_action " id="idol_submit_action">
+          <input type="submit" name="commit" value="Create Idol">
+        </li>
+        <li class="cancel">
+          <a href="javascript:void(0)" onclick="$('.create-idol-form').addClass('hide');">Cancel</a>
+        </li>
+      </ol>
+    </fieldset>
+  <% end %>
+</div>
