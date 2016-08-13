@@ -4,13 +4,14 @@
 <div class="container" style="width: 1040px">
     <div class="row">
         <div class="col-sm-9">
-            <% 18.times.each do |time| %>
+            <% @idols.each do |idol| %>
                 <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#">
-                        <%= image_tag "idol", class: "img-responsive" %>
-                    </a>
+                    <%= link_to idol_path(idol), class: 'thumbnail' do %>
+                        <%= image_tag idol.avatar.url, class: "img-responsive" %>
+                    <% end %>
                 </div>
             <% end %>
+            <%= paginate @idols %>
         </div>
         <div class="col-s-3">
             <div class="aside-nolog">
