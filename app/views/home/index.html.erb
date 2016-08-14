@@ -9,6 +9,7 @@
                     <%= link_to idol_path(idol), class: 'thumbnail' do %>
                         <%= image_tag idol.avatar.url, class: "img-responsive" %>
                     <% end %>
+                    <h4 class="idol-name"><%= idol.name %></h4>
                 </div>
             <% end %>
             <%= paginate @idols %>
@@ -17,20 +18,29 @@
             <div class="aside-nolog">
                 <h3>DOWNLOAD FOR MOBILE</h3>
                 <div class="mobile-download">
-                    <%= image_tag "ios-qrcode.png", class: 'qr-code' %>
+
                     <div class="icon">
-                        <%= image_tag "Icon_Appstore.png" %>
-                        <a href="https://itunes.apple.com/us/app/talktv-cctalk/id982100612?ls=1&amp;mt=8" target="_blank" class="btn05">Tải về</a>
+                        <%= image_tag "Icon_Googleplay.png" %>
+                        <a href="https://play.google.com/store/apps/details?id=media.itsme" target="_blank" class="btn05">Download</a>
                     </div>
                 </div>
                 <div class="mobile-download">
-                    <%= image_tag "ios-qrcode.png", class: 'qr-code' %>
+
                     <div class="icon">
                         <%= image_tag "Icon_Appstore.png" %>
-                        <a href="https://play.google.com/store/apps/details?id=vn.com.vng.talktv&amp;hl=en" target="_blank" class="btn05">Tải về</a>
+                        <a href="https://itunes.apple.com/app/id1089500702" target="_blank" class="btn05">Download</a>
                     </div>
                 </div>
 
+            </div>
+            <div class="aside-nolog">
+                <h3>FOLLOW US</h3>
+                <div class="mobile-download">
+                    <div class="icon">
+                        <%= image_tag "Icon_Googleplay.png" %>
+                        <a href="https://play.google.com/store/apps/details?id=media.itsme" target="_blank" class="btn05">Download</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

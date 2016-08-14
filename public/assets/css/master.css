@@ -19,7 +19,6 @@ body {
   min-height: initial;
   border: none;
   border-bottom: 1px solid #e2e2e2;
-  background-image: url("../images/header-new.jpg");
   background-size: 100% 94px;
   background-min-width: 1000px;
   background-repeat: no-repeat;
@@ -29,7 +28,7 @@ body {
   padding: 4px 0;
   background-size: auto 100%;
   background-repeat: repeat-x;
-  background-color: transparent;
+  background-color: #23d1b7;
 }
 
 body>.header>div:nth-child(1) ul li:not(:last-child) {
@@ -94,7 +93,7 @@ body>.header>div:nth-child(2) #header-navbar .search button[type=submit] {
   height: 37px;
   line-height: 37px;
   margin: 0;
-  border-bottom: 3px solid #f15d69;
+  border-bottom: 3px solid #23d1b7;
   font-size: 24px;
 }
 
@@ -106,7 +105,7 @@ body>.header>div:nth-child(2) #header-navbar .navbar-nav li a {
 }
 
 body>.header>div:nth-child(2) #header-navbar .navbar-nav li a:hover {
-   color: #f15d69;
+   color: #23d1b7;
 }
 
 body>.header>div:nth-child(2) #header-navbar .navbar-nav li a .fa {
@@ -207,4 +206,51 @@ img.img-responsive {
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #ddd;
+}
+
+.idol-name {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+footer {
+    background: #29282b;
+    text-align: center;
+    padding: 150px 0px;
+    margin-top: 50px;
+}
+
+.space50 {
+    margin-bottom: 50px;
+}
+
+.clearlist, .clearlist li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+.socialList li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.socialList li a {
+    display: inline-block;
+    color: #fff;
+    margin: 0px 20px;
+}
+
+.socialList li a span {
+    margin-left: 10px;
+}
+
+footer p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
 }
