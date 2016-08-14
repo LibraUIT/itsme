@@ -6,5 +6,5 @@ class Idol < ActiveRecord::Base
 
   mount_uploader :avatar, ImageUploader
 
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :history, :finders]
 end

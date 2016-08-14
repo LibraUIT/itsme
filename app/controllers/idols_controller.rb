@@ -1,9 +1,13 @@
-class IdolsController < InheritedResources::Base
+class IdolsController < ApplicationController
+  before_action :current_idol
+  def show
+
+  end
 
   private
 
-    def idol_params
-      params.require(:idol).permit(:name, :slug)
-    end
+  def current_idol
+    @idol = Idol.find(params[:id])
+  end
 end
 

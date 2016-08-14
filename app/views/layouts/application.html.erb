@@ -3,11 +3,19 @@
 <head>
   <title>It’sMe - Live Streaming Show</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <link href="assets/css/master.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="assets/slick/slick-theme.css"/>
+  <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/master.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css"/>
   <%= csrf_meta_tags %>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=532557506907656";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 <body>
 <%= render "layouts/header" %>
@@ -24,9 +32,9 @@
   <%= yield %>
 </div>
 <%= render "layouts/footer" %>
-<script src="assets/js/jquery-1.11.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/slick/slick.min.js"></script>
-<script type="text/javascript" src="assets/js/master.js"></script>
+<script src="/assets/js/jquery-1.11.1.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="/assets/js/master.js"></script>
 </body>
 </html>

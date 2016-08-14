@@ -254,3 +254,21 @@ footer p {
     text-transform: uppercase;
     color: #fff;
 }
+
+.no-padding {
+  padding:  0 !important;
+}
+
+.idol-avatar {
+  width: 100%;
+}
+
+.idol-info {
+  font-size: 15px;
+  color: #333;
+}
+
+.idol-info > a {
+  color: #23d1b7;
+  cursor: pointer;
+}

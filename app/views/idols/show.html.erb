@@ -1,14 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @idol.name %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @idol.slug %>
-</p>
-
-<%= link_to 'Edit', edit_idol_path(@idol) %> |
-<%= link_to 'Back', idols_path %>
+<div class="container" style="width: 1040px">
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="col-md-12 no-padding">
+                <div class="idol col-md-8 service-image-left">
+                    <center>
+                        <%= image_tag @idol.avatar.url, class: 'idol-avatar' %>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <h2><%= @idol.name.upcase %></h2>
+                    <p class="idol-info">
+                        <span>Nickname : </span> <%= @idol.nickname %> <br />
+                        <span>Birthday : </span> <%= @idol.birthday %> <br />
+                        <span>Socials : </span>
+                            <%= link_to (@idol.facebook.blank? ? '#' : @idol.facebook) do %>
+                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            <% end %>
+                            <%= link_to (@idol.instagram.blank? ? '#' : @idol.instagram) do %>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <% end %>
+                            <br />
+                        <span>It's Me ID : </span> <%= @idol.itsme_id %> <br />
+                        <span>Intro : </span> <p><%= @idol.bio %></p><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <%= render 'layouts/right' %>
+        </div>
+    </div>
+</div>
