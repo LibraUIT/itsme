@@ -1,0 +1,37 @@
+<%= form_for @banner, url: update_banner_logged_index_path(@banner), method: :post, :remote => true, html: {class: 'formtastic form-edit-banner'} do |f| %>
+  <fieldset class="inputs">
+    <legend><span>Banner Information</span></legend>
+    <table class="table">
+      <tr>
+        <td><%= f.label :sort %></td>
+        <td><%= f.number_field :sort %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :image %></td>
+        <td>
+          <%= f.file_field :image %>
+          <%= image_tag @banner.image.url, width: 'img-banner' %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action " id="banner_submit_action">
+        <input type="submit" name="commit" value="Update Banner">
+      </li>
+      <li class="cancel" id="banner_cancel_action">
+        <input onclick="$('.form-edit-banner').remove();" type="button" name="commit" value="Cancel">
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+<script type="text/javascript">
+  $('form.form-edit-banner').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
+</script>

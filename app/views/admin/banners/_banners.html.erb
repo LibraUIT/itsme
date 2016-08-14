@@ -1,0 +1,34 @@
+<a href="javascript:void(0);" onclick="$('.create-banner-form').toggleClass('hide');$('.edit').html('');"><h3>New Banner</h3></a><br />
+<div class="messages"></div>
+<%= render "form" %>
+<div class="edit"></div>
+<div class="list-idols">
+  <h2>All Banners</h2>
+  <table class="index_table index">
+    <thead>
+      <tr>
+        <th>Banner</th>
+        <th width="50">Sort</th>
+        <th width="180">Created At</th>
+        <th width="180">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Banner.all.each do |banner| %>
+        <tr>
+          <td><%= image_tag banner.image.url, class: 'banner-img' %></td>
+          <td><%= banner.sort %></td>
+          <td><%= banner.created_at.strftime('%d/%m/%Y') %></td>
+          <td>
+            <%= link_to edit_banner_logged_index_path(banner), remote: true, class: 'edit-banner' do %>
+              <button type="button" class="btn"> Edit</button>
+            <% end %>
+            <%= link_to destroy_banner_logged_index_path(banner), method: :delete, remote: true, data: {confirm: 'Are you sure?'}, class: 'delete-banner' do %>
+              <button type="button" class="btn"> Delete</button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

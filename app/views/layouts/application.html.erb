@@ -19,15 +19,7 @@
 </head>
 <body>
 <%= render "layouts/header" %>
-<div class="zone-content">
-    <div class="banner">
-        <div class="banner-con">
-          <div><%= image_tag "Banner_1.png" %></div>
-          <div><%= image_tag "Banner_2.png" %></div>
-          <div><%= image_tag "Banner_3.png" %></div>
-        </div>
-    </div>
-</div>
+<%= render "layouts/banners" %>
 <div class="container" style="width:1070px">
   <%= yield %>
 </div>

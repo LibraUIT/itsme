@@ -23,7 +23,7 @@
             <%= link_to edit_logged_path(idol), remote: true, class: 'edit-idol' do %>
               <button type="button" class="btn"> Edit</button>
             <% end %>
-            <%= link_to logged_path(idol), method: :delete, remote: true, data: {confirm: 'Are you sure?'} do %>
+            <%= link_to logged_path(idol), method: :delete, remote: true, data: {confirm: 'Are you sure?'}, class: 'delete-idol' do %>
               <button type="button" class="btn"> Delete</button>
             <% end %>
           </td>

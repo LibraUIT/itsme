@@ -1,0 +1,27 @@
+<div class="create-banner-form hide">
+  <%= form_for Banner.new, url: banner_logged_index_path, method: 'post', :remote => true, html: {class: 'formtastic'} do |f| %>
+    <fieldset class="inputs">
+      <legend><span>Banner Information</span></legend>
+      <ol>
+        <li>
+          <%= f.label :sort %>
+          <%= f.number_field :sort %>
+        </li>
+        <li>
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset class="actions">
+      <ol>
+        <li class="action input_action " id="banner_submit_action">
+          <input type="submit" name="commit" value="Create Banner">
+        </li>
+        <li class="cancel">
+          <a href="javascript:void(0)" onclick="$('.create-banner-form').addClass('hide');">Cancel</a>
+        </li>
+      </ol>
+    </fieldset>
+  <% end %>
+</div>

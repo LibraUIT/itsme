@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :home, only: [:index]
-  resources :logged
+  resources :logged do
+    collection do
+      post :banner
+      delete 'banner/:id', to: 'logged#destroy_banner', as: 'destroy_banner'
+      get 'banner/:id', to: 'logged#edit_banner', as: 'edit_banner'
+      post 'banner/:id', to: 'logged#update_banner', as: 'update_banner'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

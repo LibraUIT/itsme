@@ -1,0 +1,9 @@
+<div class="zone-content">
+    <div class="banner">
+        <div class="banner-con">
+          <% Banner.all.order(sort: :asc).each do |banner| %>
+            <div><%= image_tag banner.image.url %></div>
+          <% end %>
+        </div>
+    </div>
+</div>
