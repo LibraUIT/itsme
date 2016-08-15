@@ -10,7 +10,9 @@
                         <span style="background-image:url(<%= asset_url(idol.avatar.url) %>);background-position: 10px 10px;background-repeat: no-repeat;" class="idol-image"></span>
                         <div class="ranking">
                             <h4 class="idol-name"><%= idol.nickname.blank? ? idol.name : idol.nickname %></h4>
-                            <h6>Rank : <%= idol.rank.to_i %></h6>
+                            <% unless idol.rank.nil? %>
+                                <h6>Rank : <%= idol.rank.to_i %></h6>
+                            <% end %>
                         </div>
                         <div class="ranking-cover"></div>
                     <% end %>
