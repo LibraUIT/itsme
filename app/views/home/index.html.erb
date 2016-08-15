@@ -8,6 +8,9 @@
                 <div class="col-lg-4 col-md-4 col-xs-6 thumb">
                     <%= link_to idol_path(idol), class: 'thumbnail' do %>
                         <%= image_tag idol.avatar.url, class: "img-responsive" %>
+                        <div class="ranking">
+                            <h6>Rank : <%= idol.rank.to_i %></h6>
+                        </div>
                     <% end %>
                     <h4 class="idol-name"><%= idol.name %></h4>
                 </div>

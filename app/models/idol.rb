@@ -3,6 +3,7 @@ class Idol < ActiveRecord::Base
 
   validates :name, presence: true
   validates :avatar, presence: true
+  validates :rank, presence: true, uniqueness: true
 
   mount_uploader :avatar, ImageUploader
 

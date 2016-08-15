@@ -272,3 +272,23 @@ footer p {
   color: #23d1b7;
   cursor: pointer;
 }
+
+.ranking > h6 {
+    margin-top: 0;
+    color: #fff;
+    padding: 4px 0;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    -webkit-animation: text_shadow 0.8s infinite;
+    animation: text_shadow 0.8s infinite;
+}
+
+.ranking {
+    width: 84%;
+    background: #FD3866;
+    position: absolute;
+    height: 22px;
+    bottom: 38px;
+}
