@@ -6,13 +6,14 @@
         <div class="col-sm-9">
             <% @idols.each do |idol| %>
                 <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                    <%= link_to idol_path(idol), class: 'thumbnail' do %>
-                        <%= image_tag idol.avatar.url, class: "img-responsive" %>
+                    <%= link_to idol_path(idol), class: '' do %>
+                        <span style="background-image:url(<%= asset_url(idol.avatar.url) %>);background-position: 10px 10px;background-repeat: no-repeat;" class="idol-image"></span>
                         <div class="ranking">
+                            <h4 class="idol-name"><%= idol.nickname.blank? ? idol.name : idol.nickname %></h4>
                             <h6>Rank : <%= idol.rank.to_i %></h6>
                         </div>
+                        <div class="ranking-cover"></div>
                     <% end %>
-                    <h4 class="idol-name"><%= idol.name %></h4>
                 </div>
             <% end %>
             <%= paginate @idols %>
