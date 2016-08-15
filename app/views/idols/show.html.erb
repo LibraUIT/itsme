@@ -5,6 +5,9 @@
                 <div class="idol col-md-8 service-image-left">
                     <center>
                         <%= image_tag @idol.avatar.url, class: 'idol-avatar' %>
+                        <% @idol.photos.each do |photo| %>
+                            <%= image_tag photo.image.url, class: 'idol-avatar' %>
+                        <% end %>
                     </center>
                 </div>
                 <div class="col-md-4">

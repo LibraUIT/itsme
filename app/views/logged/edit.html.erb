@@ -49,6 +49,19 @@
           <%= image_tag @idol.avatar.url, width: '150' %>
         </td>
       </tr>
+      <tr>
+        <td>Other photos</td>
+        <td>
+          <div id="photos">
+            <%= f.fields_for :photos do |photo| %>
+              <%= render 'photo_fields', f: photo %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association 'Add photo', f, :photos %>
+            </div>
+          </div>
+        </td>
+      </tr>
     </table>
   </fieldset>
   <fieldset class="actions">

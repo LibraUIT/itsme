@@ -43,6 +43,17 @@
           <%= f.label :avatar %>
           <%= f.file_field :avatar %>
         </li>
+        <li>
+          <div id="photos">
+            <label>Add more photos</label>
+            <%= f.fields_for :photos do |photo| %>
+              <%= render 'photo_fields', f: photo %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association 'Add photo', f, :photos %>
+            </div>
+          </div>
+        </li>
       </ol>
     </fieldset>
     <fieldset class="actions">

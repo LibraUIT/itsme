@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <table>
+    <tr>
+    <td width="220"></td>
+    <td width="300">
+      <%= f.file_field :image, class: 'form-control', accept: 'image/png,image/gif,image/jpeg' %>
+    </td>
+    <td>
+      <%= link_to_remove_association f do %>
+        <h6>Remove</h6>
+      <% end %>
+    </td>
+  </table>
+</div>
