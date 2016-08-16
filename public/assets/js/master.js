@@ -10,4 +10,8 @@ $( document ).ready(function() {
   });
 
   $('.slick-arrow').hide();
+
+  $("img.lazy").lazyload({
+    threshold : 200
+  });
 });

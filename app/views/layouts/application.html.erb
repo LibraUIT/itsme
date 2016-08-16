@@ -17,7 +17,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 </head>
-<body>
+<body <%= "onload=callFunction()" if action_name == 'index' %>>
 <%= render "layouts/header" %>
 <%= render "layouts/banners" %>
 <div class="container" style="width:1070px">
@@ -27,6 +27,7 @@
 <script src="/assets/js/jquery-1.11.1.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.lazyload.js"></script>
 <script type="text/javascript" src="/assets/js/master.js"></script>
 </body>
 </html>

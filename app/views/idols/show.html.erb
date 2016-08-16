@@ -4,9 +4,9 @@
             <div class="col-md-12 no-padding">
                 <div class="idol col-md-8 service-image-left">
                     <center>
-                        <%= image_tag @idol.avatar.url, class: 'idol-avatar' %>
+                        <%= image_tag @idol.avatar.url, class: 'idol-avatar lazy' %>
                         <% @idol.photos.each do |photo| %>
-                            <%= image_tag photo.image.url, class: 'idol-avatar' %>
+                            <%= image_tag photo.image.url, class: 'idol-avatar lazy' %>
                         <% end %>
                     </center>
                 </div>
@@ -27,6 +27,10 @@
                         <span>Intro : </span> <p><%= @idol.bio %></p><br />
                     </p>
                 </div>
+            </div>
+            <div class="col-sm-12 no-padding">
+                <h4><i class="fa fa-comments" aria-hidden="true"></i> Comments</h4>
+                <div class="fb-comments" data-href="<%= current_domain %>" data-width="728px" data-numposts="5"></div>
             </div>
         </div>
         <div class="col-sm-3">

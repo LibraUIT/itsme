@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :home, only: [:index]
+  get :loadmore, to: 'home#loadmore'
   resources :logged do
     collection do
       post :banner
