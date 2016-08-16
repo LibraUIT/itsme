@@ -6,9 +6,10 @@ class Idol < ActiveRecord::Base
 
   validates :name, presence: true
   validates :avatar, presence: true
-  validates :rank, presence: true, uniqueness: true
 
   mount_uploader :avatar, ImageUploader
 
   friendly_id :name, use: [:slugged, :history, :finders]
+
+  default_scope { order(rank: :asc) }
 end

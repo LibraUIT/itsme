@@ -28,7 +28,7 @@ body {
   padding: 4px 0;
   background-size: auto 100%;
   background-repeat: repeat-x;
-  background-color: #23d1b7;
+  background-color: #FCE4EC;
 }
 
 body>.header>div:nth-child(1) ul li:not(:last-child) {
@@ -212,8 +212,7 @@ img.img-responsive {
 }
 
 .idol-name {
-  text-align: center;
-  font-size: 15px;
+  font-size: 13px;
   color: #FFF;
 }
 
@@ -294,7 +293,7 @@ footer p {
     /*background: #FD3866;*/
     position: absolute;
     height: auto;
-    bottom: 10px;
+    bottom: 0px;
     padding: 5px;
     z-index: 9999;
 }
@@ -304,12 +303,12 @@ footer p {
 }
 
 .ranking-cover {
-    width: 90%;
+    width: 92%;
     background: #FD3866;
     position: absolute;
-    height: 70px;
+    height: 25px;
     opacity: 0.3;
-    bottom: 10px;
+    bottom: 0px;
     padding: 5px;
     z-index: 100;
 }
@@ -333,4 +332,8 @@ footer p {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+}
+
+span.idol-rank {
+  font-size: 11px;
 }
