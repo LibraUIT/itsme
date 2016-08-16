@@ -23,3 +23,66 @@
     </div>
 
 </div>
+<hr />
+<div class="aside-nolog">
+    <h3>RANKING</h3>
+    <div class="col-sm-12 ranking-section">
+         <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Week</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Month</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">All</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="col-sm-12 no-padding tab-pane active" id="home">
+                <% Rank.by_week.take(10).each do |rank| %>
+                    <div class="col-sm-12 no-padding ranking-item">
+                    <div class="col-sm-6">
+                        <%= link_to idol_path(rank.idol), class: 'link' do %>
+                            <%= image_tag rank.idol.avatar, class: 'img-circle ranking-idol-avatar' %>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-6">
+                        <%= link_to idol_path(rank.idol), class: 'link' do %>
+                            <h6 class="ranking-idol-name"><%= rank.idol.name %></h6>
+                        <% end %>
+                    </div>
+                    </div>
+                <% end %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <% Rank.by_month.take(10).each do |rank| %>
+                    <div class="col-sm-12 no-padding ranking-item">
+                    <div class="col-sm-6">
+                        <%= link_to idol_path(rank.idol), class: 'link' do %>
+                            <%= image_tag rank.idol.avatar, class: 'img-circle ranking-idol-avatar' %>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-6">
+                        <%= link_to idol_path(rank.idol), class: 'link' do %>
+                            <h6 class="ranking-idol-name"><%= rank.idol.name %></h6>
+                        <% end %>
+                    </div>
+                    </div>
+                <% end %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <% Rank.by_all.take(10).each do |rank| %>
+                    <div class="col-sm-12 no-padding ranking-item">
+                    <div class="col-sm-6">
+                        <%= link_to idol_path(rank.idol), class: 'link' do %>
+                            <%= image_tag rank.idol.avatar, class: 'img-circle ranking-idol-avatar' %>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-6">
+                        <%= link_to idol_path(rank.idol), class: 'link' do %>
+                            <h6 class="ranking-idol-name"><%= rank.idol.name %></h6>
+                        <% end %>
+                    </div>
+                    </div>
+                <% end %>
+            </div>
+          </div>
+    </div>
+</div>

@@ -338,3 +338,50 @@ footer p {
 span.idol-rank {
   font-size: 11px;
 }
+
+ul.nav-tabs {
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 20px;
+}
+
+.nav-tabs > li {
+  border: 0 !important;
+  width: 33%;
+}
+
+.nav-tabs > li.active > a  {
+  color: #FD3866 !important;
+}
+
+.tab-pane {
+  padding: 0 !important;
+}
+
+.ranking-idol-avatar {
+  width: 60px;
+  height: 60px;
+}
+
+.ranking-item {
+  margin-bottom: 10px;
+}
+
+.ranking-section {
+  border: 1px solid #eeeeee;
+}
+
+a.link {
+  color: #F48FB1;
+}
+
+a.link > h6 {
+  font-weight: normal;
+  font-size: 13px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+
+a.link:hover {
+  text-decoration: none;
+  color: #FD3866;
+}

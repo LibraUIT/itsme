@@ -13,5 +13,5 @@ class Idol < ActiveRecord::Base
 
   friendly_id :name, use: [:slugged, :history, :finders]
 
-  default_scope { order(rank: :asc) }
+  default_scope { order(raking: :asc) }
 end
