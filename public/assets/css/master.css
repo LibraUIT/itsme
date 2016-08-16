@@ -212,7 +212,7 @@ img.img-responsive {
 }
 
 .idol-name {
-  font-size: 13px;
+  font-size: 11px;
   color: #FFF;
 }
 
@@ -306,8 +306,8 @@ footer p {
     width: 92%;
     background: #FD3866;
     position: absolute;
-    height: 25px;
-    opacity: 0.3;
+    height: 30px;
+    opacity: 0.2;
     bottom: 0px;
     padding: 5px;
     z-index: 100;
@@ -318,7 +318,7 @@ footer p {
 }
 
 .thumb:hover .ranking-cover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .idol-image {
