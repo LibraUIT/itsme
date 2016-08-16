@@ -27,4 +27,18 @@ $( document ).ready(function() {
   $('a.delete-idol').bind('ajax:success', function (evt, data, status, xhr) {
     location.reload();
   });
+  $('form#new_rank').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
+  $('a.delete-rank').bind('ajax:success', function (evt, data, status, xhr) {
+    location.reload();
+  });
+  $('a.edit-rank').bind('ajax:success', function (evt, data, status, xhr) {
+    $('.create-rank-form').addClass('hide');
+    $('.edit').html(data);
+  });
 });

@@ -5,6 +5,7 @@ class LoggedController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :set_idol, only: [:edit, :update, :destroy]
   before_action :current_banner, only: [:edit_banner, :update_banner, :destroy_banner]
+  before_action :set_rank, only: [:edit_rank, :update_rank, :destroy_rank]
 
   def index
 
@@ -68,6 +69,35 @@ class LoggedController < ApplicationController
     render json: true
   end
 
+  def rank
+    @rank = Rank.create(rank_params)
+    if @rank.save
+      flash[:notice] = 'Rank was successsfully created !'
+      render json: true
+    else
+      render 'rank'
+    end
+  end
+
+  def destroy_rank
+    @rank.destroy
+    flash[:notice] = 'Rank was successsfully deleted !'
+    render json: true
+  end
+
+  def edit_rank
+  end
+
+  def update_rank
+    @rank.update(rank_params)
+    if @rank.save
+      flash[:notice] = 'Rank was successsfully updated !'
+      render json: true
+    else
+      render 'edit_rank'
+    end
+  end
+
   private
 
   def idol_params
@@ -84,5 +114,13 @@ class LoggedController < ApplicationController
 
   def current_banner
     @banner = Banner.find(params[:id])
+  end
+
+  def rank_params
+    params.require(:rank).permit!
+  end
+
+  def set_rank
+    @rank = Rank.find(params[:id])
   end
 end

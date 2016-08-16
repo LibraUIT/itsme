@@ -12,6 +12,10 @@ Rails.application.routes.draw do
       delete 'banner/:id', to: 'logged#destroy_banner', as: 'destroy_banner'
       get 'banner/:id', to: 'logged#edit_banner', as: 'edit_banner'
       post 'banner/:id', to: 'logged#update_banner', as: 'update_banner'
+      post :rank
+      delete 'rank/:id', to: 'logged#destroy_rank', as: 'destroy_rank'
+      get 'rank/:id', to: 'logged#edit_rank', as: 'edit_rank'
+      post 'rank/:id', to: 'logged#update_rank', as: 'update_rank'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,36 @@
+<a href="javascript:void(0);" onclick="$('.create-rank-form').toggleClass('hide');$('.edit').html('');"><h3>New Rank</h3></a><br />
+<div class="messages"></div>
+<%= render "form" %>
+<div class="edit"></div>
+<div class="list-idols">
+  <h2>All Ranks</h2>
+  <table class="index_table index">
+    <thead>
+      <tr>
+        <th>Idol</th>
+        <th width="180">All Rank</th>
+        <th width="180">Month Rank</th>
+        <th width="180">Week Rank</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Rank.all.each do |rank| %>
+        <tr>
+          <td><%= image_tag rank.idol.avatar.url, class: 'thumb-img' %></td>
+          <td><%= rank.all_rank %></td>
+          <td><%= rank.month_rank %></td>
+          <td><%= rank.week_rank %></td>
+          <td>
+          <%= link_to edit_rank_logged_index_path(rank), remote: true, class: 'edit-rank' do %>
+              <button type="button" class="btn"> Edit</button>
+            <% end %>
+            <%= link_to destroy_rank_logged_index_path(rank), method: :delete, remote: true, data: {confirm: 'Are you sure?'}, class: 'delete-rank' do %>
+              <button type="button" class="btn"> Delete</button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

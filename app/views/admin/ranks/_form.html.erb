@@ -1,0 +1,35 @@
+<div class="create-rank-form hide">
+  <%= form_for Rank.new, url: rank_logged_index_path, method: 'post', :remote => true, html: {class: 'formtastic'} do |f| %>
+    <fieldset class="inputs">
+      <legend><span>Rank Information</span></legend>
+      <ol>
+        <li>
+          <%= f.label :idol %>
+          <%= f.select :idol_id, options_for_select(Idol.all.map{ |member| [member.name, member.id]}), { include_blank: 'Select Idol', :multiple => false}, class: 'select-idol' %>
+        </li>
+        <li>
+          <%= f.label :all_rank %>
+          <%= f.number_field :all_rank %>
+        </li>
+        <li>
+          <%= f.label :month_rank %>
+          <%= f.number_field :month_rank %>
+        </li>
+        <li>
+          <%= f.label :week_rank %>
+          <%= f.number_field :week_rank %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset class="actions">
+      <ol>
+        <li class="action input_action " id="rank_submit_action">
+          <input type="submit" name="commit" value="Create Rank">
+        </li>
+        <li class="cancel">
+          <a href="javascript:void(0)" onclick="$('.create-rank-form').addClass('hide');">Cancel</a>
+        </li>
+      </ol>
+    </fieldset>
+  <% end %>
+</div>
