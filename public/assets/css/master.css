@@ -385,3 +385,37 @@ a.link:hover {
   text-decoration: none;
   color: #FD3866;
 }
+
+@media(max-width: 992px){
+  .zone-content > .banner {
+    height: 100px !important;
+    width: 100%;
+  }
+  .zone-content > .banner > .banner-con {
+    width: 100%;
+  }
+
+  .page-header {
+    width: 100% !important;
+  }
+
+  .container {
+    width: 100% !important;
+  }
+
+  .row {
+    width: 100% !important;
+  }
+
+  .col-xs-6 {
+    width: 100% !important;
+  }
+
+  .navbar-brand {
+    margin-left: 40%;
+  }
+
+  .banner-slide {
+    width: 100%;
+  }
+}

@@ -2,7 +2,7 @@
     <div class="banner">
         <div class="banner-con">
           <% Banner.all.order(sort: :asc).each do |banner| %>
-            <div><%= image_tag banner.image.url %></div>
+            <div><%= image_tag banner.image.url, class: 'banner-slide' %></div>
           <% end %>
         </div>
     </div>
