@@ -418,4 +418,8 @@ a.link:hover {
   .banner-slide {
     width: 100%;
   }
+
+  .ranking-cover {
+    height: 40px;
+  }
 }
