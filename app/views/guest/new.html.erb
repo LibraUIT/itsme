@@ -1,0 +1,122 @@
+<div class="page-header" style="width:780px">
+  <h1 class="title">Idol Submission</h1>
+</div>
+<div class="container" style="width: 1040px">
+  <%= form_for @idol, url: guest_index_path, method: :post, html: {class: ''} do |f| %>
+    <% if @idol.errors.any? %>
+      <div class="cols-sm-12 alert alert-danger">
+        <ul>
+          <% @idol.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Idol Name (*)</label>
+        <div class="col-sm-8">
+          <%= f.text_field :name, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">It's Me Nick Name (*)</label>
+        <div class="col-sm-8">
+        <%= f.text_field :nickname, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">It's Me ID (*)</label>
+        <div class="col-sm-8">
+        <%= f.text_field :itsme_id, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Birthday</label>
+        <div class="col-sm-8">
+        <%= f.text_field :birthday, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Number Phone (*)</label>
+        <div class="col-sm-8">
+        <%= f.text_field :phone, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Facebook (*)</label>
+        <div class="col-sm-8">
+        <%= f.text_field :facebook, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Instagram</label>
+        <div class="col-sm-8">
+        <%= f.text_field :instagram, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">About You</label>
+        <div class="col-sm-8">
+        <%= f.text_field :bio, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Avatar (*)</label>
+        <div class="col-sm-8">
+          <%= f.file_field :avatar, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Photos</label>
+        <div class="col-sm-8">
+          <div id="photos">
+            <%= f.fields_for :photos do |photo| %>
+              <%= render 'photo_fields', f: photo %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association 'Add photo', f, :photos %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label class="col-sm-4">Captcha</label>
+        <div class="col-sm-8">
+          <%= recaptcha_tags %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-8">
+        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

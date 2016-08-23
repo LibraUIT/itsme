@@ -423,3 +423,9 @@ a.link:hover {
     height: 40px;
   }
 }
+
+.btn-submit {
+  background-color: #337ab7;
+  color: #FFF;
+  border-color: #2e6da4;
+}

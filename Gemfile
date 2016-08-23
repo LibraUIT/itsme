@@ -55,3 +55,4 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'cocoon'
+gem "recaptcha", require: "recaptcha/rails"
