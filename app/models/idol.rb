@@ -14,4 +14,7 @@ class Idol < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :history, :finders]
 
   default_scope { order(raking: :asc) }
+
+  scope :wait_approved, -> () { where(approved: false) }
+  scope :approved, -> () { where(approved: true) }
 end

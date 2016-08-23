@@ -429,3 +429,24 @@ a.link:hover {
   color: #FFF;
   border-color: #2e6da4;
 }
+
+.idol-submission {
+  color: #23d1b7 !important;
+  font-size: 13px !important;
+  cursor: pointer;
+}
+
+a.idol-sumited {
+  color: #333;
+  display: inline-block;
+  height: 37px;
+  line-height: 37px;
+  margin: 0;
+  border-bottom: 3px solid #23d1b7;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+a.idol-sumited:hover {
+  text-decoration: none;
+}
