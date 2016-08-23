@@ -6,8 +6,7 @@ class GuestController < ApplicationController
   def create
     @idol = Idol.new(idol_params.merge(approved: false))
     respond_to do |format|
-      #if verify_recaptcha(model: @idol) && @idol.save
-      if @idol.save
+      if verify_recaptcha(model: @idol) && @idol.save
         format.html { redirect_to new_guest_path, notice: 'Thank You ! Idol was successfully submited. Approve or deny submission request by administrator.' }
         format.json { render :show, status: :created, location: @idol }
       else
