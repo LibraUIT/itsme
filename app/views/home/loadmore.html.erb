@@ -8,8 +8,8 @@
                     <%= idol.nickname.blank? ? idol.name : idol.nickname %>
                 </div>
                 <div class="col-sm-5 text-right">
-                    <% unless idol.rank.nil? %>
-                        <span class="idol-rank">Rank : <%= idol.rank.to_i %></span>
+                    <% unless idol.raking.nil? %>
+                        <span class="idol-rank">Rank : <%= idol.raking.to_i %></span>
                     <% end %>
                 </div>
             </div>
