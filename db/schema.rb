@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827020639) do
+ActiveRecord::Schema.define(version: 20160827024522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20160827020639) do
     t.integer  "raking"
     t.string   "status"
     t.boolean  "approved",   default: true
+    t.integer  "sort"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -105,6 +106,12 @@ ActiveRecord::Schema.define(version: 20160827020639) do
     t.boolean  "transform"
     t.boolean  "transform_month"
     t.boolean  "transform_week"
+  end
+
+  create_table "schedule_tasks", force: :cascade do |t|
+    t.integer  "number_of_run"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
