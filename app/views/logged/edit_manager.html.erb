@@ -1,0 +1,57 @@
+<%= form_for @manager, url: update_manager_logged_index_path(@manager), method: :post, :remote => true, html: {class: 'formtastic form-edit-manager'} do |f| %>
+  <fieldset class="inputs">
+    <legend><span>Manager Information</span></legend>
+    <table class="table">
+      <tr>
+        <td><%= f.label :full_name %></td>
+        <td><%= f.text_field :fullname %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :facebook %></td>
+        <td><%= f.text_field :facebook %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :phone %></td>
+        <td>
+          <%= f.text_field :phone %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.label :position %></td>
+        <td>
+          <%= f.text_field :position %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.label :avatar %></td>
+        <td>
+            <%= f.file_field :avatar, class: 'form-control', accept: 'image/png,image/gif,image/jpeg' %>
+          <%= image_tag f.object.avatar.url, width: '150' %>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action " id="manager_submit_action">
+        <input type="submit" name="commit" value="Update Manager">
+      </li>
+      <li class="cancel" id="rank_cancel_action">
+        <input onclick="$('.form-edit-manager').remove();" type="button" name="commit" value="Cancel">
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+<script type="text/javascript">
+  $('form.form-edit-manager').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
+</script>

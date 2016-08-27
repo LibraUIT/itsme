@@ -108,3 +108,36 @@
           </div>
     </div>
 </div>
+
+<% unless Manager.all.count.zero? %>
+<hr/>
+<div class="aside-nolog" style="margin-top:20px">
+    <h3>TEAM</h3>
+    <div class="col-sm-12 ranking-section" style="padding-top: 10px">
+        <% Manager.all.each do |manager| %>
+            <div class="col-sm-12 no-padding ranking-item">
+                <div class="rows no-padding">
+                    <div class="col-sm-5">
+                        <%= image_tag manager.avatar, class: 'img-circle team-avatar' %>
+                    </div>
+                    <div class="col-sm-7 manager-info">
+                        <h4 class="manager-name"><%= manager.fullname %></h4><br />
+                        <h4 class="manager-contact">
+                            <% unless manager.facebook.blank? %>
+                                <%= link_to manager.facebook, target: '_blank' do %>
+                                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                <% end %>
+                            <% end %>
+                            <% unless manager.email.blank? %>
+                                <%= mail_to manager.email do %>
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <% end %>
+                            <% end %>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<% end %>

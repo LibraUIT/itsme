@@ -1,0 +1,43 @@
+<div class="create-manager-form hide">
+  <%= form_for Manager.new, url: manager_logged_index_path, method: 'post', :remote => true, html: {class: 'formtastic'} do |f| %>
+    <fieldset class="inputs">
+      <legend><span>Manager Information</span></legend>
+      <ol>
+        <li>
+          <%= f.label :full_name %>
+          <%= f.text_field :fullname %>
+        </li>
+        <li>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </li>
+        <li>
+          <%= f.label :facebook %>
+          <%= f.text_field :facebook %>
+        </li>
+        <li>
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </li>
+        <li>
+          <%= f.label :position %>
+          <%= f.text_field :position %>
+        </li>
+        <li>
+          <%= f.label :avatar %>
+          <%= f.file_field :avatar, class: 'form-control', accept: 'image/png,image/gif,image/jpeg' %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset class="actions">
+      <ol>
+        <li class="action input_action " id="manager_submit_action">
+          <input type="submit" name="commit" value="Create Manager">
+        </li>
+        <li class="cancel">
+          <a href="javascript:void(0)" onclick="$('.create-manager-form').addClass('hide');">Cancel</a>
+        </li>
+      </ol>
+    </fieldset>
+  <% end %>
+</div>

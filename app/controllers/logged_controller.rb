@@ -6,6 +6,7 @@ class LoggedController < ApplicationController
   before_action :set_idol, only: [:edit, :update, :destroy]
   before_action :current_banner, only: [:edit_banner, :update_banner, :destroy_banner]
   before_action :set_rank, only: [:edit_rank, :update_rank, :destroy_rank]
+  before_action :set_manager, only: [:edit_manager, :update_manager, :destroy_manager]
 
   def index
 
@@ -98,6 +99,35 @@ class LoggedController < ApplicationController
     end
   end
 
+  def manager
+    @manager = Manager.create(manager_params)
+    if @manager.save
+      flash[:notice] = 'Manager was successsfully created !'
+      redirect_to admin_managers_url
+    else
+      render 'manager'
+    end
+  end
+
+  def destroy_manager
+    @manager.destroy
+    flash[:notice] = 'Manager was successsfully deleted !'
+    render json: true
+  end
+
+  def edit_manager
+  end
+
+  def update_manager
+    @manager.update(manager_params)
+    if @manager.save
+      flash[:notice] = 'Manager was successsfully updated !'
+      redirect_to admin_managers_url
+    else
+      render 'edit_manager'
+    end
+  end
+
   private
 
   def idol_params
@@ -122,5 +152,13 @@ class LoggedController < ApplicationController
 
   def set_rank
     @rank = Rank.find(params[:id])
+  end
+
+  def set_manager
+    @manager = Manager.find(params[:id])
+  end
+
+  def manager_params
+    params.require(:manager).permit!
   end
 end

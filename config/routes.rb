@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       delete 'rank/:id', to: 'logged#destroy_rank', as: 'destroy_rank'
       get 'rank/:id', to: 'logged#edit_rank', as: 'edit_rank'
       post 'rank/:id', to: 'logged#update_rank', as: 'update_rank'
+      post :manager
+      delete 'manager/:id', to: 'logged#destroy_manager', as: 'destroy_manager'
+      get 'manager/:id', to: 'logged#edit_manager', as: 'edit_manager'
+      post 'manager/:id', to: 'logged#update_manager', as: 'update_manager'
     end
   end
   resources :guest

@@ -41,4 +41,19 @@ $( document ).ready(function() {
     $('.create-rank-form').addClass('hide');
     $('.edit').html(data);
   });
+
+  $('form#new_manager').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
+  $('a.delete-manager').bind('ajax:success', function (evt, data, status, xhr) {
+    location.reload();
+  });
+  $('a.edit-manager').bind('ajax:success', function (evt, data, status, xhr) {
+    $('.create-manager-form').addClass('hide');
+    $('.edit').html(data);
+  });
 });

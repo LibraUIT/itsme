@@ -362,6 +362,11 @@ ul.nav-tabs {
   height: 40px;
 }
 
+.team-avatar {
+  width: 70px;
+  height: 70px;
+}
+
 .ranking-item h4 {
   width: 20px;
   color: #ff782e;
@@ -478,4 +483,25 @@ a.idol-sumited {
 
 a.idol-sumited:hover {
   text-decoration: none;
+}
+
+.manager-info {
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.manager-name {
+  font-size: 13px;
+  width: 100%;
+  display: inline;
+}
+
+.manager-contact {
+  font-size: 13px;
+  display: inline;
+}
+
+.manager-contact a {
+  color: #333;
 }

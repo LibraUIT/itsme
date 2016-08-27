@@ -1,0 +1,32 @@
+<a href="javascript:void(0);" onclick="$('.create-manager-form').toggleClass('hide');$('.edit').html('');"><h3>New Manager</h3></a><br />
+<div class="messages"></div>
+<%= render "form" %>
+<div class="edit"></div>
+<div class="list-idols">
+  <h2>All Managers</h2>
+  <table class="index_table index">
+    <thead>
+      <tr>
+        <th>Manager</th>
+        <th width="180">Fullname</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Manager.all.each do |manager| %>
+        <tr>
+          <td><%= image_tag manager.avatar.url, class: 'thumb-img' %></td>
+          <td><%= manager.fullname %></td>
+          <td>
+          <%= link_to edit_manager_logged_index_path(manager), remote: true, class: 'edit-rank' do %>
+              <button type="button" class="btn"> Edit</button>
+            <% end %>
+            <%= link_to destroy_manager_logged_index_path(manager), method: :delete, remote: true, data: {confirm: 'Are you sure?'}, class: 'delete-rank' do %>
+              <button type="button" class="btn"> Delete</button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
