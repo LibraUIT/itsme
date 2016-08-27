@@ -12,12 +12,27 @@
           <%= f.number_field :all_rank %>
         </li>
         <li>
+          <%= f.label :transform_all_rank %>
+          <%= f.radio_button :transform, true %> UP&nbsp;
+          <%= f.radio_button :transform, false %> DOWN
+        </li>
+        <li>
           <%= f.label :month_rank %>
           <%= f.number_field :month_rank %>
         </li>
         <li>
+          <%= f.label :transform_month_rank %>
+          <%= f.radio_button :transform_month, true %> UP&nbsp;
+          <%= f.radio_button :transform_month, false %> DOWN
+        </li>
+        <li>
           <%= f.label :week_rank %>
           <%= f.number_field :week_rank %>
+        </li>
+        <li>
+          <%= f.label :transform_week_rank %>
+          <%= f.radio_button :transform_week, true %> UP
+          <%= f.radio_button :transform_week, false %> DOWN
         </li>
       </ol>
     </fieldset>

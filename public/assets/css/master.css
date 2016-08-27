@@ -358,8 +358,37 @@ ul.nav-tabs {
 }
 
 .ranking-idol-avatar {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+}
+
+.ranking-item h4 {
+  width: 20px;
+  color: #ff782e;
+  padding-left: 5px;
+}
+
+.ranking-item center {
+  float: left;
+  width: 10px;
+}
+
+.ranking-item center .fa-caret-up {
+  position: absolute;
+  top: 8px;
+  left: -5px;
+  color: #aaaaaa;
+}
+
+.ranking-item center .fa-caret-down {
+  position: absolute;
+  top: 14px;
+  left: -5px;
+  color: #aaaaaa;
+}
+
+.ranking-item center .fa-caret-up.active, .ranking-item center .fa-caret-down.active {
+  color: #21b384;
 }
 
 .ranking-item {

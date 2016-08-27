@@ -13,12 +13,33 @@
         <td><%= f.number_field :all_rank %></td>
       </tr>
       <tr>
+        <td><%= f.label :transform_all_rank %></td>
+        <td>
+          <%= f.radio_button :transform, true %> UP&nbsp;
+          <%= f.radio_button :transform, false %> DOWN
+        </td>
+      </tr>
+      <tr>
         <td><%= f.label :month_rank %></td>
         <td><%= f.number_field :month_rank %></td>
       </tr>
       <tr>
+        <td><%= f.label :transform_month_rank %></td>
+        <td>
+          <%= f.radio_button :transform_month, true %> UP&nbsp;
+          <%= f.radio_button :transform_month, false %> DOWN
+        </td>
+      </tr>
+      <tr>
         <td><%= f.label :week_rank %></td>
         <td><%= f.number_field :week_rank %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :transform_week_rank %></td>
+        <td>
+          <%= f.radio_button :transform_week, true %> UP&nbsp;
+          <%= f.radio_button :transform_week, false %> DOWN
+        </td>
       </tr>
     </table>
   </fieldset>
