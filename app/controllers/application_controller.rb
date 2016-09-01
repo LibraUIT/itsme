@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_filter :random_idols
+  # before_filter :random_idols
 
   def random_idols
     schedule_task = ScheduleTask.first
@@ -22,4 +23,5 @@ class ApplicationController < ActionController::Base
       ScheduleTask.create!(number_of_run: 0)
     end
   end
+
 end

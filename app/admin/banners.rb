@@ -1,4 +1,4 @@
-ActiveAdmin.register_page "Banners" do
+ActiveAdmin.register_page 'Banners' do
   content do
     render partial: 'banners'
   end

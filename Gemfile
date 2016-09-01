@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop', require: false
 end
 gem 'draper', '~> 1.3'
 gem 'kaminari'
@@ -55,4 +56,4 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'cocoon'
-gem "recaptcha", require: "recaptcha/rails"
+gem 'recaptcha', require: 'recaptcha/rails'

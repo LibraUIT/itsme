@@ -1,15 +1,15 @@
 class LoggedController < ApplicationController
-  before_filter :authenticate_admin_user!
+
+  before_action :authenticate_admin_user!
   respond_to :js, :html
   layout false
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
   before_action :set_idol, only: [:edit, :update, :destroy]
   before_action :current_banner, only: [:edit_banner, :update_banner, :destroy_banner]
   before_action :set_rank, only: [:edit_rank, :update_rank, :destroy_rank]
   before_action :set_manager, only: [:edit_manager, :update_manager, :destroy_manager]
 
   def index
-
   end
 
   def create
@@ -161,4 +161,5 @@ class LoggedController < ApplicationController
   def manager_params
     params.require(:manager).permit!
   end
+
 end

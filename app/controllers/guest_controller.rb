@@ -1,4 +1,5 @@
 class GuestController < ApplicationController
+
   def new
     @idol = Idol.new
   end
@@ -21,4 +22,5 @@ class GuestController < ApplicationController
   def idol_params
     params.require(:idol).permit!
   end
+
 end

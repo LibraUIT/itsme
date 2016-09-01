@@ -37,7 +37,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="col-sm-12 no-padding tab-pane active" id="home">
-                <% Rank.by_week.take(10).each_with_index do |rank, index| %>
+                <% Rank.by_week.take(20).each_with_index do |rank, index| %>
                     <div class="col-sm-12 no-padding ranking-item">
                     <div class="col-sm-2 no-padding">
                         <center>
@@ -60,7 +60,7 @@
                 <% end %>
             </div>
             <div role="tabpanel" class="tab-pane" id="profile">
-                <% Rank.by_month.take(10).each_with_index do |rank, index| %>
+                <% Rank.by_month.take(20).each_with_index do |rank, index| %>
                     <div class="col-sm-12 no-padding ranking-item">
                     <div class="col-sm-2 no-padding">
                         <center>
@@ -83,7 +83,7 @@
                 <% end %>
             </div>
             <div role="tabpanel" class="tab-pane" id="messages">
-                <% Rank.by_all.take(10).each_with_index do |rank, index| %>
+                <% Rank.by_all.take(20).each_with_index do |rank, index| %>
                     <div class="col-sm-12 no-padding ranking-item">
                     <div class="col-sm-2 no-padding">
                         <center>
@@ -112,7 +112,7 @@
 <% unless Manager.all.count.zero? %>
 <hr/>
 <div class="aside-nolog" style="margin-top:20px">
-    <h3>TEAM</h3>
+    <h3>TEAM LEADER</h3>
     <div class="col-sm-12 ranking-section" style="padding-top: 10px">
         <% Manager.all.each do |manager| %>
             <div class="col-sm-12 no-padding ranking-item">

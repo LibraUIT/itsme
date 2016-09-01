@@ -1,4 +1,5 @@
 class Idol < ActiveRecord::Base
+
   extend FriendlyId
 
   has_many :photos, dependent: :destroy
@@ -13,12 +14,13 @@ class Idol < ActiveRecord::Base
 
   friendly_id :name, use: [:slugged, :history, :finders]
 
-  default_scope { order(sort: :asc) }
+  default_scope { order(raking: :asc) }
 
   scope :wait_approved, -> () { where(approved: false) }
   scope :approved, -> () { where(approved: true) }
 
   def self.update_sort
-    Idol.approved.update_all("sort = random()*999 ")
+    Idol.approved.update_all('sort = random()*999 ')
   end
+
 end
