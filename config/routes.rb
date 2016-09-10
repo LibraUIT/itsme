@@ -20,6 +20,10 @@ Rails.application.routes.draw do
       delete 'manager/:id', to: 'logged#destroy_manager', as: 'destroy_manager'
       get 'manager/:id', to: 'logged#edit_manager', as: 'edit_manager'
       post 'manager/:id', to: 'logged#update_manager', as: 'update_manager'
+      get :profile
+      post :update_profile
+      get :new_password
+      post :update_password
     end
   end
   resources :guest

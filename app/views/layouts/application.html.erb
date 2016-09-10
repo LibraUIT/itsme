@@ -25,7 +25,7 @@
 </div>
 <%= render "layouts/footer" %>
 <script src="/assets/js/jquery-1.11.1.min.js"></script>
-<% if controller_name == "guest" %>
+<% if controller_name == "guest" || (controller_name == 'logged' && (action_name == 'profile' || action_name == 'update_profile')) %>
   <script type="text/javascript" src="/assets/js/cocoon.js"></script>
 <% end %>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>

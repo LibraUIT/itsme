@@ -141,3 +141,25 @@
     </div>
 </div>
 <% end %>
+
+<% if current_user %>
+    <hr/>
+    <div class="aside-nolog" style="margin-top:20px">
+        <h3>MY PROFILE</h3>
+        <%= link_to profile_logged_index_path, class:"btn bn-logout" do %>
+            <i class="fa fa-user" aria-hidden="true"></i> Profile
+        <% end %>
+        <%= link_to new_password_logged_index_path, class:"btn bn-logout" do %>
+            <i class="fa fa-key" aria-hidden="true"></i> Change Password
+        <% end %>
+        <%= link_to destroy_user_session_path, class:"btn bn-logout" do %>
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
+        <% end %>
+    </div>
+<% else %>
+    <hr />
+    <h3>MY PROFILE</h3>
+    <div class="aside-nolog" style="margin-top:20px">
+        <%= link_to "Log in", new_session_path(User.new) %>
+    </div>
+<% end %>

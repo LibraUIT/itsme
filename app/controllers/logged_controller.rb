@@ -1,6 +1,7 @@
 class LoggedController < ApplicationController
 
-  before_action :authenticate_admin_user!
+  before_action :authenticate_admin_user!, except: [:profile, :update_profile, :new_password, :update_password]
+  before_action :authenticate_user!, only: [:profile, :update_profile, :new_password, :update_password]
   respond_to :js, :html
   layout false
   skip_before_action :verify_authenticity_token
@@ -128,6 +129,41 @@ class LoggedController < ApplicationController
     end
   end
 
+  def profile
+    @idol = current_user.idol
+    render layout: 'application'
+  end
+
+  def update_profile
+    @idol = current_user.idol
+    @idol.update(idol_params)
+    if @idol.save
+      flash[:notice] = 'Idol was successsfully updated !'
+      redirect_to profile_logged_index_url
+    else
+      render :profile, layout: 'application'
+    end
+  end
+
+  def new_password
+    @user = current_user
+    render layout: 'application'
+  end
+
+  def update_password
+    @user = current_user
+    respond_to do |format|
+      if @user.update_with_password(user_params)
+        sign_in @user, bypass: true
+        format.html { redirect_to new_password_logged_index_path, notice: 'Password was successfully updated.' }
+        format.json { render :new_password, layout: 'application', status: :created, location: @user }
+      else
+        format.html { render :new_password, layout: 'application' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   def idol_params
@@ -160,6 +196,10 @@ class LoggedController < ApplicationController
 
   def manager_params
     params.require(:manager).permit!
+  end
+
+  def user_params
+    params.require(:user).permit(:password, :password_confirmation, :current_password)
   end
 
 end

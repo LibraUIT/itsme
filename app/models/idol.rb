@@ -5,10 +5,15 @@ class Idol < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
 
+  has_one :user, :foreign_key => 'idol_id', dependent: :destroy, autosave: true
+  accepts_nested_attributes_for :user, reject_if: proc { |attributes| attributes['idol_id'].blank? },
+                                         allow_destroy: true
+
   has_one :rank, dependent: :destroy
 
   validates :name, presence: true
   validates :avatar, presence: true
+  validates :itsme_id, uniqueness: true, if: 'itsme_id.present?'
 
   mount_uploader :avatar, ImageUploader
 
@@ -19,8 +24,22 @@ class Idol < ActiveRecord::Base
   scope :wait_approved, -> () { where(approved: false) }
   scope :approved, -> () { where(approved: true) }
 
+  after_save :update_user
+
   def self.update_sort
     Idol.approved.update_all('sort = random()*999 ')
+  end
+
+  def update_user
+    if self.itsme_id.present?
+      if self.user.nil?
+        user = User.create(username: "#{self.itsme_id}",
+                            email: "#{self.id}-idol-#{self.itsme_id}@itsme.sg",
+                            password: '12345678',
+                            idol_id: self.id)
+        user.save!
+      end
+    end
   end
 
 end
