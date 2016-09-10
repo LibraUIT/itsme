@@ -5,9 +5,9 @@ class Idol < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
 
-  has_one :user, :foreign_key => 'idol_id', dependent: :destroy, autosave: true
+  has_one :user, foreign_key: 'idol_id', dependent: :destroy, autosave: true
   accepts_nested_attributes_for :user, reject_if: proc { |attributes| attributes['idol_id'].blank? },
-                                         allow_destroy: true
+                                       allow_destroy: true
 
   has_one :rank, dependent: :destroy
 
@@ -31,12 +31,12 @@ class Idol < ActiveRecord::Base
   end
 
   def update_user
-    if self.itsme_id.present?
-      if self.user.nil?
-        user = User.create(username: "#{self.itsme_id}",
-                            email: "#{self.id}-idol-#{self.itsme_id}@itsme.sg",
-                            password: '12345678',
-                            idol_id: self.id)
+    if itsme_id.present?
+      if user.nil?
+        user = User.create(username: itsme_id.to_s,
+                           email: "#{id}-idol-#{itsme_id}@itsme.sg",
+                           password: '12345678',
+                           idol_id: id)
         user.save!
       end
     end
