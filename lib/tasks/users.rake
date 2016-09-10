@@ -9,7 +9,7 @@ namespace :users do
     Idol.all.each_with_index do |idol, index|
       next if idol.itsme_id.blank?
       user = User.create(username: idol.itsme_id.to_s,
-                         email: "idol-#{index}-#{idol.itsme_id}@itsme.sg",
+                         email: "idol-#{Time.now.strftime('%Y%m%d%H%i%s')}-#{idol.itsme_id}@itsme.sg",
                          password: '12345678',
                          idol_id: idol.id)
       user.save!
