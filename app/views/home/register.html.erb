@@ -1,0 +1,151 @@
+<div class="container" style="position:relative">
+<h1 style='text-align: center;'>It's Me Trial VJs in Vietnam</h1>
+<%= form_for :user ,method: 'get', class: 'form_vj' do |f| %>
+  <h6>
+    <%= f.label 'Name' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :name, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Gender' %><span class="require">*</span>
+    <div><%= f.radio_button :gender, "Male" %>&nbsp;Male</div>
+    <div><%= f.radio_button :gender, "Fremale" %>&nbsp;Female</div>
+    <div><%= f.radio_button :gender, "Fabulous" %>&nbsp;Fabulous</div>
+    <br >
+  </h6>
+  <h6>
+    <%= f.label "It's Me Nickname" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :nick_name, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label "It's Me ID" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :name, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Email' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :email, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Identification NO#' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :indentification, class: 'form-control' %></div>
+  </h6>
+      <h6>
+    <%= f.label 'Home Address' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :home_address, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Phone Number#' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :phone, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label "Date of Birth" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :birthday, class: 'form-control', id: 'field_birthday' %></div>
+  </h6>
+  <h6>
+    <%= f.label "Facebook" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :facebook, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'How many fans you have on fb' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :fan_number, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Zalo Account' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :zalo, class: 'form-control' %></div>
+  </h6>
+    </h6>
+      <h6>
+    <%= f.label 'Instagram' %>
+    <div class="text_field"><%= f.text_field :instagram, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Youtube / SnapChat (if any)' %>
+    <div class="text_field"><%= f.text_field :youtube_snapchat, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label "Cellphone Operating System" %>
+    <div><%= f.radio_button :cellphone_system, "IOS" %>&nbsp;IOS</div>
+    <div><%= f.radio_button :cellphone_system, "Android" %>&nbsp; Android</div>
+    <%= f.radio_button :cellphone_system, "different" %>&nbsp;<span>Khac</span>
+    <%= f.text_field :cellphone_system, class: 'field_phone_system' %>
+    <br ><br >
+  </h6>
+  <h6>
+    <%= f.label "Cellphone Brand/ Model" %>
+    <div class="text_field"><%= f.text_field :cellphone_brand, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Time of Start Streaming' %><span class="require">*</span>
+    <div class="text_field_time"><%= f.text_field :time_start_broadcast, class: 'form-control', id: 'timepicker1'  %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Time of end Streaming' %><span class="require">*</span>
+    <div class="text_field_time"><%= f.text_field :time_end_broadcast, class: 'form-control', id: 'timepicker' %></div>
+  </h6>
+    <h6>
+    <%= f.label "What kind of content you're going to streaming on It's Me!" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :content, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label "What's the Network you're using streaming" %><span class="require">*</span>
+    <div><%= f.radio_button :network, "Wifi" %>&nbsp;Wifi</div>
+    <div><%= f.radio_button :network, "4G" %>&nbsp;4G</div>
+    <div><%= f.radio_button :network, "3G" %>&nbsp;3G</div>
+    <div><%= f.radio_button :network, "three" %>&nbsp;Sometimes wifi, sometimes 4G, that will be depends on</div>
+    <%= f.radio_button :network, "different" %>&nbsp;<span>Khac</span>
+    <%= f.text_field :network, class: 'field_phone_system' %>
+    <br ><br >
+  </h6>
+  <h6>
+    <%= f.label "What's the upload speed of your cellphone?" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :upload_speed, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Have you changed your profile picture? ' %><span class="require">*</span>
+    <div><%= f.radio_button :change_avatar, "Yes" %>&nbsp;Yes</div>
+    <div><%= f.radio_button :change_avatar, "No" 'form-control' %>&nbsp;No</div>
+    <br >
+  </h6>
+  <h6>
+    <%= f.label 'Do you have a good lightening ?' %><span class="require">*</span>
+    <div><%= f.radio_button :light, "Yes" %>&nbsp;Yes</div>
+    <div><%= f.radio_button :light, "No" %>&nbsp;No</div>
+    <br >
+  </h6>
+  <h6>
+    <%= f.label "Effective Date of Getting Started on It's Me" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :effective_date, class: 'form-control' %></div>
+  </h6>
+    <h6>
+    <%= f.label "Payment Method" %><span class="require">*</span>
+    <div><%= f.radio_button :payment_method, "Yes" %>&nbsp;Bank Transfer</div>
+    <br >
+  </h6>
+  <h6>
+    <%= f.label "Account Holder" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :account_holder, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label "Bank Name" %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :bank_name, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Account Number ' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :account_number, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label "Routing Number (wire)" %>
+    <div class="text_field"><%= f.text_field :routing_number, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Bank Address' %><span class="require">*</span>
+    <div class="text_field"><%= f.text_field :bank_address, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.label 'Swift Code ' %>
+    <div class="text_field"><%= f.text_field :swift_code, class: 'form-control' %></div>
+  </h6>
+  <h6>
+    <%= f.submit 'Submit' %>
+  </h6>
+<% end %>
+</div>

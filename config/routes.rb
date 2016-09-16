@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :home, only: [:index]
   get :loadmore, to: 'home#loadmore'
+  get :register, to: 'home#register'
   resources :logged do
     collection do
       post :banner

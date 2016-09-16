@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910085347) do
+ActiveRecord::Schema.define(version: 20160915081029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,5 +144,40 @@ ActiveRecord::Schema.define(version: 20160910085347) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vjs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "gender"
+    t.string   "nick_name"
+    t.string   "email"
+    t.integer  "identification"
+    t.text     "home_address"
+    t.string   "phone"
+    t.date     "birthday"
+    t.string   "facebook"
+    t.integer  "fan_number"
+    t.string   "instagram"
+    t.string   "zalo"
+    t.string   "youtube_snapchat"
+    t.string   "cellphone_system"
+    t.string   "cellphone_brand"
+    t.datetime "time_start_broadcast"
+    t.datetime "time_end_broadcast"
+    t.string   "content"
+    t.string   "network"
+    t.string   "upload_speed"
+    t.boolean  "change_avatar"
+    t.boolean  "light"
+    t.date     "effective_date"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "payment_method"
+    t.string   "account_holder"
+    t.string   "bank_name"
+    t.string   "account_number"
+    t.string   "routing_number"
+    t.text     "bank_address"
+    t.string   "swift_code"
+  end
 
 end

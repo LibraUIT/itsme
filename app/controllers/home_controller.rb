@@ -9,4 +9,8 @@ class HomeController < ApplicationController
     render 'loadmore', layout: false
   end
 
+  def register
+
+  end
+
 end
