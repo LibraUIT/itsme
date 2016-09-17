@@ -5,25 +5,129 @@
   <table class="index_table index">
     <thead>
       <tr>
-        <th width="180">Idol</th>
-        <th>Name</th>
-        <th width="180">Created At</th>
-        <th width="180">Actions</th>
+        <th width="180">No.</th>
+        <th width="80%">Information</th>
       </tr>
     </thead>
     <tbody>
-      <% Idol.wait_approved.each do |idol| %>
-        <tr>
-          <td><%= image_tag idol.avatar.url, class: 'thumb-img' %></td>
-          <td><%= idol.name %></td>
-          <td><%= idol.created_at.strftime('%d/%m/%Y') %></td>
+      <% IdolInfo.all.each_with_index do |idol, index| %>
+        <tr class="vj-row-key">
           <td>
-            <%= link_to edit_logged_path(idol), remote: true, class: 'edit-idol' do %>
-              <button type="button" class="btn"> Edit</button>
-            <% end %>
-            <%= link_to logged_path(idol), method: :delete, remote: true, data: {confirm: 'Are you sure?'}, class: 'delete-idol' do %>
-              <button type="button" class="btn"> Delete</button>
-            <% end %>
+            <%= index + 1 %>
+          </td>
+          <td  width="80%">
+            <%= link_to "#{idol.fullname} (click to expand)", 'javascript:void(0)', 'onclick' => '$(this).next(\'table.vj-row-data\').toggleClass(\'hide\');', class: 'link-vj' %>
+            <table class="vj-row-data hide">
+              <tr>
+                <th width="200">Fullname</th>
+                <td><%= idol.fullname %></td>
+                <th width="200">Gender</th>
+                <td><%= idol.gender %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Nickname It's me</th>
+                <td><%= idol.itsme_nickname %></td>
+                <th width="200">It's me ID</th>
+                <td><%= idol.itsme_id %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Email</th>
+                <td><%= idol.email %></td>
+                <th width="200">Identification NO#</th>
+                <td><%= idol.identification %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Home Address</th>
+                <td><%= idol.address %></td>
+                <th width="200">Phone Number#</th>
+                <td><%= idol.phone %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Date of Birth</th>
+                <td><%= idol.decorate.dob %></td>
+                <th width="200">Facebook</th>
+                <td><%= idol.facebook %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Fan on Facebook</th>
+                <td><%= idol.fb_follwers_number %></td>
+                <th width="200">Zalo Account </th>
+                <td><%= idol.zalo %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Instagram</th>
+                <td><%= idol.instagram %></td>
+                <th width="200">Youtube / SnapChat </th>
+                <td><%= idol.others %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Cellphone Operating System</th>
+                <td><%= idol.os %></td>
+                <th width="200">Cellphone Brand/ Model</th>
+                <td><%= idol.cellphone_model %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Time of Start Streaming</th>
+                <td><%= idol.time_of_start_streaming %></td>
+                <th width="200">Time of end Streaming</th>
+                <td><%= idol.time_of_end_streaming %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Content streaming on It's Me! </th>
+                <td><%= idol.content_of_streaming %></td>
+                <th width="200">Network you're using streaming</th>
+                <td><%= idol.nextwork_for_streaming %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Speed of your cellphone </th>
+                <td><%= idol.nextwork_speed %></td>
+                <th width="200">Changed their profile picture</th>
+                <td><%= idol.decorate.update_avatar %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Good lightening </th>
+                <td><%= idol.decorate.good_lightening %></td>
+                <th width="200">Getting Started on It's Me</th>
+                <td><%= idol.decorate.getting_start %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Payment Method </th>
+                <td><%= idol.payment_method %></td>
+                <th width="200">Account Holder</th>
+                <td><%= idol.account_holder %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Bank Name  </th>
+                <td><%= idol.bankname %></td>
+                <th width="200">Account Number </th>
+                <td><%= idol.account_number %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Routing Number  </th>
+                <td><%= idol.routing_number %></td>
+                <th width="200">Bank Address </th>
+                <td><%= idol.bank_address %></td>
+              </tr>
+
+              <tr>
+                <th width="200">Swift Code </th>
+                <td><%= idol.swift_code %></td>
+              </tr>
+            </table>
           </td>
         </tr>
       <% end %>

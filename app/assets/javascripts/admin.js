@@ -56,4 +56,12 @@ $( document ).ready(function() {
     $('.create-manager-form').addClass('hide');
     $('.edit').html(data);
   });
+
+  $('form#new_policy, form.edit_policy').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
 });

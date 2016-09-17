@@ -9,4 +9,7 @@ class HomeController < ApplicationController
     render 'loadmore', layout: false
   end
 
+  def policy
+  end
+
 end

@@ -1,0 +1,10 @@
+<div class="page-header" style="width:1040px">
+  <h1 class="title">Các Điều Khoản & Chính Sách</h1>
+</div>
+<div class="container" style="width: 1040px">
+  <% if Policy.all.count.zero? %>
+    <p>Đang cập nhật ...</p>
+  <% else %>
+    <p class="markdown-content"><%= Policy.last.content %></p>
+  <% end %>
+</div>
