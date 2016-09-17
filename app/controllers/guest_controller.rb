@@ -22,10 +22,31 @@ class GuestController < ApplicationController
     end
   end
 
+  def register
+    @idol_info = IdolInfo.new
+  end
+
+  def action
+    @idol_info = IdolInfo.create(idol_info_params)
+    respond_to do |format|
+      if @idol_info.save
+        format.html { redirect_to register_guest_index_path, notice: 'Thank You ! Your information was successfully submited. Approve or deny submission request by administrator.' }
+        format.json { render :show, status: :created, location: @idol_info }
+      else
+        format.html { render :register }
+        format.json { render json: @idol_info.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   def idol_params
     params.require(:idol).permit!
+  end
+
+  def idol_info_params
+    params.require(:idol_info).permit!
   end
 
 end

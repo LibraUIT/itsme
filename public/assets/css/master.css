@@ -505,3 +505,11 @@ a.idol-sumited:hover {
 .manager-contact a {
   color: #333;
 }
+
+.field_with_errors .error {
+  color: red;
+}
+
+.field_with_errors input {
+  border: 1px solid red;
+}

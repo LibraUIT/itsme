@@ -1,0 +1,60 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
+    labels:
+      idol_info:
+        fullname: 'Họ và tên'
+        gender: 'Giới tính'
+        itsme_nickname: "Nickname trên It's Me"
+        itsme_id: "Tài khoản It's Me"
+        identification: 'Số CMTND'
+        address: 'Địa chỉ nhà'
+        phone: 'Số điện thoại'
+        dob: 'Ngày sinh'
+        fb_follwers_number: 'Số lượt theo dõi trên Facebook'
+        others: 'Youtube/SnapChat - Nếu có'
+        os: 'Hệ điều hành điện thoại'
+        cellphone_model: 'Nhãn hiệu điện thoại di động'
+        time_of_start_streaming: 'Thời gian bắt đầu thu phát sóng trực tuyến'
+        time_of_end_streaming: 'Thời gian kết thúc chương trình thu phát sóng trực tiếp'
+        content_of_streaming: "Nội dung bạn dự định phát sóng trên It's me!"
+        nextwork_for_streaming: 'Bạn thu phát sóng trực tuyến bằng hệ thống mạng nào?'
+        nextwork_speed: 'Tốc độ đăng tải từ điện thoại di động của bạn?'
+        update_avatar: 'Bạn đã thay đổi ảnh đại diện chưa?'
+        good_lightening: 'Ánh sáng tốt phục vụ việc thu phát sóng'
+        getting_start: "Ngày bạn chính thức làm việc tại It's Me"
+        payment_method: 'Cách thức thanh toán'
+        account_holder: 'Chủ tài khoản'
+        bankname: 'Tên Ngân hàng'
+        account_number: 'Số tài khoản'
+        routing_number: 'Routing Number (wire)'
+        bank_address: 'Địa chỉ ngân hàng'
+        swift_code: 'Mã số Swift'
