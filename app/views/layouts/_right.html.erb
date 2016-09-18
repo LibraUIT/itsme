@@ -1,5 +1,4 @@
 <div class="aside-nolog">
-    <h3><a class="idol-sumited" href="<%= register_guest_index_path %>">ĐĂNG KÝ LÀM VJ</a></h3>
     <h3>FANPAGE</h3>
     <div class="mobile-download">
         <div class="fb-page" data-href="https://www.facebook.com/RDitsmevn" data-width="260" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RDitsmevn" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RDitsmevn">RD - Itsme</a></blockquote></div>
@@ -155,11 +154,5 @@
         <%= link_to destroy_user_session_path, class:"btn bn-logout" do %>
             <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out
         <% end %>
-    </div>
-<% else %>
-    <hr />
-    <h3>MY PROFILE</h3>
-    <div class="aside-nolog" style="margin-top:20px">
-        <%= link_to "Log in", new_session_path(User.new) %>
     </div>
 <% end %>

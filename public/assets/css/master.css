@@ -513,3 +513,31 @@ a.idol-sumited:hover {
 .field_with_errors input {
   border: 1px solid red;
 }
+
+.navbar-header {
+  width: 100%;
+}
+
+.navbar-header-left {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+.navbar-header-right {
+  width: 50%;
+  float: left;
+  text-align: right;
+  vertical-align: middle;
+  padding-top: 20px;
+}
+
+.navbar-header-left > a , .navbar-header-right > a {
+  text-decoration: none;
+  color: #23d1b7;
+  font-weight: bold;
+}
+
+.navbar-header-left > a:hover , .navbar-header-right > a:hover {
+  cursor: pointer;
+}
