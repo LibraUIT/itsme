@@ -1,68 +1,70 @@
 <div class="container1" style="position:relative">
-<h1 style='text-align: center;'>It's Me Trial VJs in Vietnam</h1>
+<h1 style='text-align: center;'>It's Me Trial VJs in Vietnam (Tờ khai dành cho VJ thử việc tại Việt Nam) for Rose Dao (New)</h1>
+<span>This form is to record the payment info for It's Me Trial VJs in Vietnam, pls make sure you provide everything information needed in detail. or else it may not allow us to pay the payment to you. (Tờ khai này nhằm ghi lại thông tin thanh toán cho các VJ thử nghiệm tại Việt Nam. Xin vui lòng cung cấp đầy đủ và chi tiết mọi thông tin, nếu không chúng tôi sẽ không thể thực hiện thanh toán cho bạn)</span><br ><br >
+<h6 class="require">* Bắt buộc</h6><br ><br >
 <%= form_for @vj, class: 'form_vj' do |f| %>
   <h6>
     <%= f.label 'Name' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :name, class: 'form-control', required: true %></div>
+    <div class="text_field"><%= f.text_field :name, class: 'form-control', placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
   <h6>
     <%= f.label 'Gender' %><span class="require">*</span>
-    <div><%= f.radio_button :gender, "Male" %>&nbsp;Male</div>
-    <div><%= f.radio_button :gender, "Fremale" %>&nbsp;Female</div>
-    <div><%= f.radio_button :gender, "Fabulous" %>&nbsp;Fabulous</div>
+    <div><%= f.radio_button :gender, "Male" %>&nbsp;Male (Nam) </div>
+    <div><%= f.radio_button :gender, "Fremale" %>&nbsp;Female (Nữ) </div>
+    <div><%= f.radio_button :gender, "Fabulous" %>&nbsp;Fabulous (Khác)</div>
     <br >
   </h6>
   <h6>
-    <%= f.label "It's Me Nickname" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :nick_name, class: 'form-control', required: true %></div>
+    <%= f.label "It's Me Nickname " %> (Nickname trên It's Me)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :nick_name, class: 'form-control', placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
   <h6>
-    <%= f.label "It's Me ID" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :name, class: 'form-control', required: true %></div>
+    <%= f.label "It's Me ID" %> (Tài khoản It's Me)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :name, class: 'form-control', placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
   <h6>
     <%= f.label 'Email' %><span class="require">*</span>
-    <div class="text_field"><%= f.email_field :email, class: 'form-control', required: true %></div>
+    <div class="text_field"><%= f.email_field :email, class: 'form-control', placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
   <h6>
-    <%= f.label 'Identification NO#' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :identification, class: 'form-control', required: true %></div>
+    <%= f.label 'Identification NO#' %> (Số CMTND)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :identification, class: 'form-control', placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
       <h6>
-    <%= f.label 'Home Address' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :home_address, class: 'form-control', required: true %></div>
+    <%= f.label 'Home Address' %> (Địa chỉ nhà)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :home_address, class: 'form-control', placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
   <h6>
-    <%= f.label 'Phone Number#' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :phone, class: 'form-control', required: true %></div>
+    <%= f.label 'Phone Number#' %> (Số điện thoại)<span class="require">*</span>
+    <div class="text_field"><%= f.telephone_field :phone, class: 'form-control',placeholder:'Câu trả lời của bạn', required: true %></div>
   </h6>
   <h6>
-    <%= f.label "Date of Birth" %><span class="require">*</span>
-    <div class="text_field"><%= f.date_field :birthday, class: 'form-control' %></div>
+    <%= f.label "Date of Birth" %> (Ngày sinh)<span class="require">*</span>
+    <div class="text_field"><%= f.date_field :birthday, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
     <%= f.label "Facebook" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :facebook, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :facebook, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
     <%= f.label 'How many fans you have on fb' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :fan_number, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :fan_number, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Zalo Account' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :zalo, class: 'form-control' %></div>
+    <%= f.label 'Zalo Account' %> (Tài khoản Zalo)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :zalo, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
     </h6>
       <h6>
     <%= f.label 'Instagram' %>
-    <div class="text_field"><%= f.text_field :instagram, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :instagram, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Youtube / SnapChat (if any)' %>
-    <div class="text_field"><%= f.text_field :youtube_snapchat, class: 'form-control' %></div>
+    <%= f.label 'Youtube / SnapChat (if any)' %>(Youtube/SnapChat - Nếu có)
+    <div class="text_field"><%= f.text_field :youtube_snapchat, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label "Cellphone Operating System" %>
+    <%= f.label "Cellphone Operating System" %> (Hệ điều hành điện thoại)
     <div><%= f.radio_button :cellphone_system, "IOS" %>&nbsp;IOS</div>
     <div><%= f.radio_button :cellphone_system, "Android" %>&nbsp;Android</div>
     <%= f.radio_button :cellphone_system, "different" %>&nbsp;<span>Khác</span>
@@ -70,79 +72,87 @@
     <br ><br >
   </h6>
   <h6>
-    <%= f.label "Cellphone Brand/ Model" %>
-    <div class="text_field"><%= f.text_field :cellphone_brand, class: 'form-control' %></div>
+    <%= f.label "Cellphone Brand/ Model" %> (Nhãn hiệu điện thoại di động)<br >
+    <span class="e_g">e.g iphone6 (ví dụ iPhone 6s)
+    <div class="text_field"><%= f.text_field :cellphone_brand, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Time of Start Streaming' %><span class="require">*</span>
+    <%= f.label 'Time of Start Streaming' %>(Thời gian bắt đầu thu phát sóng trực tuyến)<span class="require">*</span><br >
+    <span class="e_g">we will suggest you to have the fixed streaming time for per day, which can help you to increase viewers and keep viewers stick to you ( input the start time and end time e.g 8:00 to 10:00 or 20:00 to 24:00)/Chúng tôi khuyến khích bạn nên thu phát sóng vào một khung giờ cố định trong ngày. Điều này vừa giúp bạn tăng lượng người xem vừa tạo thành thói quen để giữ chân khán giả (ví dụ thời gian bắt đầu và thời gian kết thúc chương trình thu phát sóng từ 8:00 đến 10:00 hoặc từ 20:00 đến 24:00)</span><br ><br >
     <div class="text_field_time"><%= f.time_field :time_start_broadcast, class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Time of end Streaming' %><span class="require">*</span>
+    <%= f.label 'Time of end Streaming' %>(Thời gian kết thúc chương trình thu phát sóng trực tiếp)<span class="require">*</span><br >
+    <span class="e_g">we will suggest you to have the fixed streaming time for per day, which can help you to increase viewers and keep viewers stick to you ( input the start time and end time e.g 8:00 to 10:00 or 20:00 to 24:00)//Chúng tôi khuyến khích bạn nên thu phát sóng vào một khung giờ cố định trong ngày. Điều này vừa giúp bạn tăng lượng người xem vừa tạo thành thói quen để giữ chân khán giả (ví dụ thời gian bắt đầu và thời gian kết thúc chương trình thu phát sóng từ 8:00 đến 10:00 hoặc từ 20:00 đến 24:00)</span><br ><br >
     <div class="text_field_time"><%= f.time_field :time_end_broadcast, class: 'form-control' %></div>
   </h6>
     <h6>
-    <%= f.label "What kind of content you're going to streaming on It's Me!" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :content, class: 'form-control' %></div>
+    <%= f.label "What kind of content you're going to streaming on It's Me!" %>(Nội dung bạn dự định phát sóng trên It's me!)<span class="require">*</span><br >
+    <span class="e_g">singing songs/ dancing/ talk show etc (Ví dụ hát/nhảy/hội đàm)</span><br >
+    <div class="text_field"><%= f.text_field :content, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label "What's the Network you're using streaming" %><span class="require">*</span>
+    <%= f.label "What's the Network you're using streaming" %> (Bạn thu phát sóng trực tuyến bằng hệ thống mạng nào?)<span class="require">*</span><br >
+    <span class="e_g">pls note: signed VJs must use WIFI to do stream (Lưu ý: đối với những VJ ký hợp đồng với It's me, bắt buộc phải thu phát sóng trực tuyến bằng Wifi)</span><br >
     <div><%= f.radio_button :network, "Wifi" %>&nbsp;Wifi</div>
     <div><%= f.radio_button :network, "4G" %>&nbsp;4G</div>
     <div><%= f.radio_button :network, "3G" %>&nbsp;3G</div>
     <div><%= f.radio_button :network, "three" %>&nbsp;Sometimes wifi, sometimes 4G, that will be depends on</div>
     <%= f.radio_button :network, "different" %>&nbsp;<span>Khác</span>
-    <%= f.text_field :network, class: 'field_phone_system' %>
+    <%= f.text_field :network, placeholder:'Câu trả lời của bạn', class: 'field_phone_system form-control' %>
     <br ><br >
   </h6>
   <h6>
-    <%= f.label "What's the upload speed of your cellphone?" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :upload_speed, class: 'form-control' %></div>
+    <%= f.label "What's the upload speed of your cellphone?" %>(Tốc độ đăng tải từ điện thoại di động của bạn?)<span class="require">*</span><br >
+    <span class="e_g">click this link <a href='http://www.speedtest.net/' target="_blank">http://www.speedtest.net/</a>, and then copy your test results here. e.g <a href='http://www.speedtest.net/my-result/5284948232' target="_blank">http://www.speedtest.net/my-result/5284948232</a> e.g my upload speed is 3.84 Mbps (the upload speed of VJ must more than 1Mbps)/ Nhấp chuột vào đường dẫn <a href='http://www.speedtest.net/' target="_blank">http://www.speedtest.net/</a>, sau đó sao chép lại kết quả tại đây e.g <a href='http://www.speedtest.net/my-result/5284948232' target="_blank">http://www.speedtest.net/my-result/5284948232</a> , ví dụ tốc đăng tải từ điện thoại của tôi là 3.84 Mbps (tốc độ đăng tải của VJ phải trên 1Mbps)</span><br >
+    <div class="text_field"><%= f.text_field :upload_speed, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Have you changed your profile picture? ' %><span class="require">*</span>
-    <div><%= f.radio_button :change_avatar, "Yes" %>&nbsp;Yes</div>
-    <div><%= f.radio_button :change_avatar, "No" 'form-control' %>&nbsp;No</div>
+    <%= f.label 'Have you changed your profile picture? ' %>Bạn đã thay đổi ảnh đại diện chưa?)<span class="require">*</span><br >
+    <span class="e_g">profile picture must be 640*640 pixel with high quality. You must change your profile picture to a high quality one if you login with FB. (Ảnh đại diện phải từ 640*640 pixel với độ phân giải cao.Nếu đăng nhập bằng Facebook bạn phải thay đổi hình ảnh đại diện có chất lượng lượng cao)</span><br >
+    <div><%= f.radio_button :change_avatar, "Yes" %>&nbsp;Yes/Có</div>
+    <div><%= f.radio_button :change_avatar, "No" 'form-control' %>&nbsp;No/Chưa</div>
     <br >
   </h6>
   <h6>
-    <%= f.label 'Do you have a good lightening ?' %><span class="require">*</span>
+    <%= f.label 'Do you have a good lightening ?' %>(Ánh sáng tốt phục vụ việc thu phát sóng)<span class="require">*</span><br >
+    <span class = "e_g">a good lightening is the key for your streaming to attract new users, pls make sure you have a good lightening (Ánh sáng tốt là yếu tố quyết định trong đối với phần thu phát sóng của bạn nhằm giúp bạn thu hút lượng khán giả mới. Xin vui lòng đảm bảo điều kiện ánh sáng tốt khi thực viện thu phát sóng trực tiếp)</span><br >d
     <div><%= f.radio_button :light, "Yes" %>&nbsp;Yes</div>
     <div><%= f.radio_button :light, "No" %>&nbsp;No</div>
     <br >
   </h6>
   <h6>
-    <%= f.label "Effective Date of Getting Started on It's Me" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :effective_date, class: 'form-control' %></div>
+    <%= f.label "Effective Date of Getting Started on It's Me" %>(Ngày bạn chính thức làm việc tại It's Me) <span class="require">*</span>
+    <div class="text_field"><%= f.text_field :effective_date, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
     <h6>
-    <%= f.label "Payment Method" %><span class="require">*</span>
-    <div><%= f.radio_button :payment_method, "Yes" %>&nbsp;Bank Transfer</div>
+    <%= f.label "Payment Method" %>(Cách thức thanh toán)<span class="require">*</span>
+    <div><%= f.radio_button :payment_method, "Yes" %>&nbsp;Bank Transfer (Chuyển tiền qua ngân hàng)</div>
     <br >
   </h6>
   <h6>
-    <%= f.label "Account Holder" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :account_holder, class: 'form-control' %></div>
+    <%= f.label "Account Holder" %>(Chủ tài khoản)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :account_holder, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label "Bank Name" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :bank_name, class: 'form-control' %></div>
+    <%= f.label "Bank Name" %>(Tên Ngân hàng)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :bank_name, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Account Number ' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :account_number, class: 'form-control' %></div>
+    <%= f.label 'Account Number ' %>(Số tài khoản)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :account_number, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
     <%= f.label "Routing Number (wire)" %>
-    <div class="text_field"><%= f.text_field :routing_number, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :routing_number, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Bank Address' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :bank_address, class: 'form-control' %></div>
+    <%= f.label 'Bank Address' %>(Địa chỉ ngân hàng)<span class="require">*</span>
+    <div class="text_field"><%= f.text_field :bank_address, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
-    <%= f.label 'Swift Code ' %>
-    <div class="text_field"><%= f.text_field :swift_code, class: 'form-control' %></div>
+    <%= f.label 'Swift Code ' %>(Mã số Swift)
+    <div class="text_field"><%= f.text_field :swift_code, placeholder:'Câu trả lời của bạn', class: 'form-control' %></div>
   </h6>
   <h6>
     <%= f.submit 'Submit' %>

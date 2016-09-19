@@ -1,5 +1,5 @@
 
-span.require {
+.require {
   color: #ff0000;
 }
 .text_field {
@@ -34,4 +34,7 @@ input#user_cellphone_system, input#user_network {
   input[type=text]:blur,input[type=email]:blur {
     border-bottom: 1px solid #c9d0d6;
   }
+}
+.e_g {
+  font-weight: 100;
 }
