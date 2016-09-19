@@ -541,3 +541,7 @@ a.idol-sumited:hover {
 .navbar-header-left > a:hover , .navbar-header-right > a:hover {
   cursor: pointer;
 }
+
+.sign-in, .sign-up {
+  font-size: 20px;
+}
