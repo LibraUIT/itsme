@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root 'home#index'
-  resources :home, only: [:index]
+  resources :home, only: [:index] do
+    get :policy, on: :collection
+  end
   get :loadmore, to: 'home#loadmore'
   get :register, to: 'home#register'
   post 'vjs', to: 'home#create'
@@ -26,9 +28,14 @@ Rails.application.routes.draw do
       post :update_profile
       get :new_password
       post :update_password
+      post :create_policy
+      post :update_policy
     end
   end
-  resources :guest
+  resources :guest do
+    get :register, on: :collection
+    post :action, on: :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

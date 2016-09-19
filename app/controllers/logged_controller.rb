@@ -1,6 +1,6 @@
 class LoggedController < ApplicationController
 
-  before_action :authenticate_admin_user!, except: [:profile, :update_profile, :new_password, :update_password]
+  before_action :authenticate_admin_user!, except: [:profile, :update_profile, :new_password, :update_password, :create_policy, :update_policy]
   before_action :authenticate_user!, only: [:profile, :update_profile, :new_password, :update_password]
   respond_to :js, :html
   layout false
@@ -164,6 +164,31 @@ class LoggedController < ApplicationController
     end
   end
 
+  def create_policy
+    @policy = Policy.create(policy_params)
+    if @policy.save
+      flash[:notice] = 'Policy was successsfully created !'
+      render json: true
+    else
+      render 'create_policy'
+    end
+  end
+
+  def update_policy
+    @policy = Policy.last
+    if @policy
+      @policy.update(policy_params)
+    else
+      @policy = Policy.create(policy_params)
+    end
+    if @policy.save
+      flash[:notice] = 'Policy was successsfully updated !'
+      render json: true
+    else
+      render 'create_policy'
+    end
+  end
+
   private
 
   def idol_params
@@ -200,6 +225,10 @@ class LoggedController < ApplicationController
 
   def user_params
     params.require(:user).permit(:password, :password_confirmation, :current_password)
+  end
+
+  def policy_params
+    params.require(:policy).permit(:content)
   end
 
 end

@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915081029) do
+
+ActiveRecord::Schema.define(version: 20160917042054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +70,40 @@ ActiveRecord::Schema.define(version: 20160915081029) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "idol_infos", force: :cascade do |t|
+    t.string  "fullname"
+    t.string  "gender"
+    t.string  "itsme_nickname"
+    t.string  "itsme_id"
+    t.string  "email"
+    t.string  "identification"
+    t.string  "address"
+    t.string  "phone"
+    t.date    "dob"
+    t.string  "facebook"
+    t.integer "fb_follwers_number"
+    t.string  "zalo"
+    t.string  "instagram"
+    t.string  "others"
+    t.string  "os"
+    t.string  "cellphone_model"
+    t.string  "time_of_start_streaming"
+    t.string  "time_of_end_streaming"
+    t.string  "content_of_streaming"
+    t.string  "nextwork_for_streaming"
+    t.string  "nextwork_speed"
+    t.boolean "update_avatar"
+    t.boolean "good_lightening"
+    t.date    "getting_start"
+    t.string  "payment_method"
+    t.string  "account_holder"
+    t.string  "bankname"
+    t.string  "account_number"
+    t.string  "routing_number"
+    t.string  "bank_address"
+    t.string  "swift_code"
+  end
+
   create_table "idols", force: :cascade do |t|
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -105,6 +140,11 @@ ActiveRecord::Schema.define(version: 20160915081029) do
     t.datetime "updated_at", null: false
     t.string   "image"
     t.integer  "idol_id"
+  end
+
+  create_table "policies", force: :cascade do |t|
+    t.text    "content"
+    t.boolean "status",  default: false
   end
 
   create_table "ranks", force: :cascade do |t|

@@ -6,7 +6,7 @@ namespace :users do
 
   def create_users_from_idol
     puts 'create users from idol...'
-    Idol.all.each_with_index do |idol, index|
+    Idol.all.each_with_index do |idol, _index|
       next if idol.itsme_id.blank?
       user = User.create(username: idol.itsme_id.to_s,
                          email: "#{(0...50).map { ('a'..'z').to_a[rand(20)] }.join}@itsme.sg",
