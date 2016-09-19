@@ -1,9 +1,9 @@
-<div class="container" style="position:relative">
+<div class="container1" style="position:relative">
 <h1 style='text-align: center;'>It's Me Trial VJs in Vietnam</h1>
-<%= form_for :user ,method: 'get', class: 'form_vj' do |f| %>
+<%= form_for @vj, class: 'form_vj' do |f| %>
   <h6>
     <%= f.label 'Name' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :name, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :name, class: 'form-control', required: true %></div>
   </h6>
   <h6>
     <%= f.label 'Gender' %><span class="require">*</span>
@@ -14,31 +14,31 @@
   </h6>
   <h6>
     <%= f.label "It's Me Nickname" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :nick_name, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :nick_name, class: 'form-control', required: true %></div>
   </h6>
   <h6>
     <%= f.label "It's Me ID" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :name, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :name, class: 'form-control', required: true %></div>
   </h6>
   <h6>
     <%= f.label 'Email' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :email, class: 'form-control' %></div>
+    <div class="text_field"><%= f.email_field :email, class: 'form-control', required: true %></div>
   </h6>
   <h6>
     <%= f.label 'Identification NO#' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :indentification, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :identification, class: 'form-control', required: true %></div>
   </h6>
       <h6>
     <%= f.label 'Home Address' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :home_address, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :home_address, class: 'form-control', required: true %></div>
   </h6>
   <h6>
     <%= f.label 'Phone Number#' %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :phone, class: 'form-control' %></div>
+    <div class="text_field"><%= f.text_field :phone, class: 'form-control', required: true %></div>
   </h6>
   <h6>
     <%= f.label "Date of Birth" %><span class="require">*</span>
-    <div class="text_field"><%= f.text_field :birthday, class: 'form-control', id: 'field_birthday' %></div>
+    <div class="text_field"><%= f.date_field :birthday, class: 'form-control' %></div>
   </h6>
   <h6>
     <%= f.label "Facebook" %><span class="require">*</span>
@@ -64,8 +64,8 @@
   <h6>
     <%= f.label "Cellphone Operating System" %>
     <div><%= f.radio_button :cellphone_system, "IOS" %>&nbsp;IOS</div>
-    <div><%= f.radio_button :cellphone_system, "Android" %>&nbsp; Android</div>
-    <%= f.radio_button :cellphone_system, "different" %>&nbsp;<span>Khac</span>
+    <div><%= f.radio_button :cellphone_system, "Android" %>&nbsp;Android</div>
+    <%= f.radio_button :cellphone_system, "different" %>&nbsp;<span>Khác</span>
     <%= f.text_field :cellphone_system, class: 'field_phone_system' %>
     <br ><br >
   </h6>
@@ -75,11 +75,11 @@
   </h6>
   <h6>
     <%= f.label 'Time of Start Streaming' %><span class="require">*</span>
-    <div class="text_field_time"><%= f.text_field :time_start_broadcast, class: 'form-control', id: 'timepicker1'  %></div>
+    <div class="text_field_time"><%= f.time_field :time_start_broadcast, class: 'form-control' %></div>
   </h6>
   <h6>
     <%= f.label 'Time of end Streaming' %><span class="require">*</span>
-    <div class="text_field_time"><%= f.text_field :time_end_broadcast, class: 'form-control', id: 'timepicker' %></div>
+    <div class="text_field_time"><%= f.time_field :time_end_broadcast, class: 'form-control' %></div>
   </h6>
     <h6>
     <%= f.label "What kind of content you're going to streaming on It's Me!" %><span class="require">*</span>
@@ -91,7 +91,7 @@
     <div><%= f.radio_button :network, "4G" %>&nbsp;4G</div>
     <div><%= f.radio_button :network, "3G" %>&nbsp;3G</div>
     <div><%= f.radio_button :network, "three" %>&nbsp;Sometimes wifi, sometimes 4G, that will be depends on</div>
-    <%= f.radio_button :network, "different" %>&nbsp;<span>Khac</span>
+    <%= f.radio_button :network, "different" %>&nbsp;<span>Khác</span>
     <%= f.text_field :network, class: 'field_phone_system' %>
     <br ><br >
   </h6>

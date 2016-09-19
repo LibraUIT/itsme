@@ -17,3 +17,21 @@ input#user_cellphone_system, input#user_network {
 .text_field_time {
   width: 20%;
 }
+.container1 {
+  input[type=text], input[type=email] {
+    border-top: none ;
+    border-right: none;
+    border-left: none;
+    color: #d81365;
+  }
+  input[type=text]:focus,input[type=email]:focus {
+    border-top: none ;
+    border-right: none;
+    border-left: none;
+    box-shadow: none;
+    border-bottom: 2px solid #3107ba ;
+  }
+  input[type=text]:blur,input[type=email]:blur {
+    border-bottom: 1px solid #c9d0d6;
+  }
+}

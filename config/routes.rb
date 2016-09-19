@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
   get :loadmore, to: 'home#loadmore'
   get :register, to: 'home#register'
+  post 'vjs', to: 'home#create'
   resources :logged do
     collection do
       post :banner
