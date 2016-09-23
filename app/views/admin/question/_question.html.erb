@@ -1,0 +1,51 @@
+<% if Question.all.count.zero? %>
+  <h4>Create Question</h4>
+<% else %>
+  <h4>Edit Question</h4>
+<% end %>
+<div class="messages"></div>
+<%= simple_form_for (Question.last || Question.new), url: (Question.all.count.zero? ? create_question_logged_index_path : update_question_logged_index_path), method: :post, remote: true, class: 'formtastic' do |f| %>
+  <fieldset class="inputs">
+      <ol>
+        <li>
+          <div style="margin-left: 20%">
+            <a href="javascript:void(0)" onclick="showPreview();"> <i class="fa fa-eye" aria-hidden="true"></i> Preview</a>
+            <a href="javascript:void(0)" data-toggle="modal" onclick="$('#markdownModal').toggleClass('hide');"><i class="fa fa-question-circle" aria-hidden="true"></i> Markdown Grammar</a>
+            <%= render "modal_markdown" %>
+          </div>
+        </li>
+        <li>
+          <div id="content-question">
+            <%= f.input :content, as: :text, input_html: {rows: 40, "oninput" => "this.editor.update()", id: "text-input"} %>
+          </div>
+        </li>
+        <li>
+          <div style="margin-top:30px; margin-left:20%" id="content-preview-question" class="hide">
+            <div id="preview"> </div>
+          </div>
+        </li>
+        <li>
+          <%= f.button :submit %>
+        </li>
+      </ol>
+  </fieldset>
+<% end %>
+<script type="text/javascript" src="/assets/js/markdown.js"></script>
+<%= javascript_tag defer: 'defer' do -%>
+    function showPreview() {
+      $('#content-preview-question').toggleClass('hide');
+      $('#content-question').toggleClass('hide');
+    }
+
+    function Editor(input, preview) {
+      this.update = function () {
+        preview.innerHTML = markdown.toHTML(input.value);
+      };
+      input.editor = this;
+      this.update();
+    }
+    try {
+      var $mark = function (id) { return document.getElementById(id); };
+      new Editor($mark("text-input"), $mark("preview"));
+    } catch(err){}
+<% end -%>

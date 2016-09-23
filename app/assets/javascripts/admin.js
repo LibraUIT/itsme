@@ -64,4 +64,13 @@ $( document ).ready(function() {
       location.reload();
     }
   });
+
+    $('form#new_question, form.edit_question').bind('ajax:success', function (evt, data, status, xhr) {
+    if (data != true) {
+      $('.messages').html(data);
+    } else {
+      location.reload();
+    }
+  });
+
 });

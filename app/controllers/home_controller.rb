@@ -12,4 +12,7 @@ class HomeController < ApplicationController
   def policy
   end
 
+  def question
+  end
+
 end
