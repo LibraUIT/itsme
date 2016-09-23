@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :home, only: [:index] do
     get :policy, on: :collection
+    get :question, on: :collection
   end
   get :loadmore, to: 'home#loadmore'
   resources :logged do
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
       post :update_password
       post :create_policy
       post :update_policy
+      post :create_question
+      post :update_question
     end
   end
   resources :guest do

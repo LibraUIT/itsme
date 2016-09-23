@@ -1,6 +1,6 @@
 class LoggedController < ApplicationController
 
-  before_action :authenticate_admin_user!, except: [:profile, :update_profile, :new_password, :update_password, :create_policy, :update_policy]
+  before_action :authenticate_admin_user!, except: [:profile, :update_profile, :new_password, :update_password, :create_policy, :create_question, :update_policy]
   before_action :authenticate_user!, only: [:profile, :update_profile, :new_password, :update_password]
   respond_to :js, :html
   layout false
@@ -174,6 +174,16 @@ class LoggedController < ApplicationController
     end
   end
 
+def create_question
+    @question = Question.create(question_params)
+    if @question.save
+      flash[:notice] = 'Question was successsfully created !'
+      render json: true
+    else
+      render 'create_question'
+    end
+  end
+
   def update_policy
     @policy = Policy.last
     if @policy
@@ -186,6 +196,21 @@ class LoggedController < ApplicationController
       render json: true
     else
       render 'create_policy'
+    end
+  end
+
+  def update_question
+    @question = Question.last
+    if @question
+      @question.update(question_params)
+    else
+      @question = Question.create(question_params)
+    end
+    if @question.save
+      flash[:notice] = 'Question was successsfully updated !'
+      render json: true
+    else
+      render 'create_question'
     end
   end
 
@@ -229,6 +254,10 @@ class LoggedController < ApplicationController
 
   def policy_params
     params.require(:policy).permit(:content)
+  end
+
+  def question_params
+    params.require(:question).permit(:content)
   end
 
 end
