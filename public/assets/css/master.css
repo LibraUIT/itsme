@@ -545,3 +545,21 @@ a.idol-sumited:hover {
 .sign-in, .sign-up {
   font-size: 20px;
 }
+
+.footer-logo {
+  width: 200px,
+  height: 100px;
+  margin: auto;
+}
+
+.footer-logo img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.footer-logo .footer-text {
+  color: #FFF;
+  vertical-align: center;
+  padding-top: 10px;
+}
